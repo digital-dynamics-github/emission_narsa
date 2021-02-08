@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% load static i18n thumbnail  %}
+
+
+
+{% block header %}
+    {% include "include/header_admin.html" %}
+{% endblock %}
+{% block body %}
+    
+<div class="container center-auto">
+    
+    
+    <div id="tabs-administrator" class="border-bottom shadow top30">
+        <div class="tabs-side relative container center-auto tabs" id="tabs-container-administrator"  data-name="administrator">
+            <ul class="horizontal parent-ul">
+                <li class="bleu-color bold hover-fade pointer tab active">Streams </li>
+                <li class="bleu-color bold hover-fade pointer tab">Candidats </li>
+                <li class="bleu-color bold hover-fade pointer tab">réglements </li>
+                <li class="bleu-color bold hover-fade pointer tab">Settings </li>
+
+            </ul>
+            <div class="clr"></div>
+        </div>
+    </div><!-- tabs-details-analytics --->
+    
+    
+    
+    <div id="" class="relative hidden container-tabs-administrator">
+        <div class="slider-tabs-administrator relative">
+            <div class="tab-administrator left">
+                <div class="box0-15">
+                    <div class="table-widget relative">
+                        <h1 class="bottom30 top30">Streams   
+
+                            <input type="button" value="Ajouter Un Stream" class="btn bleu right add-widget" data-type="stream" />
+
+                            <span class="block clr"></span>
+                        </h1>
+                        <table width="100%" cellSpacing="0" cellPadding="0" border="0">
+                            <thead class="header-table">
+                                <tr>
+                                    <th class="column-table">Nom du Stream Live</th>
+                                    <th class="column-table">Description</th>
+                                    <th class="column-table">code</th>
+                                    <th class="column-table">active</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+                                {% for stream in streams %}
+                                    <tr class="row-table">
+                                        <td class="column-table">{{stream.title}}</td>
+                                        <td class="column-table">{{stream.description}}</td>
+                                        <td class="column-table">{{stream.code}}</td>
+                                        <td class="column-table">
+                                            <div id="" class="pointer animate widget-switch {% if stream.active == True %}active{% endif %}" data-type="active_stream" data-uid="{{stream.uid}}"><!---  -->
+                                                    <div class="handler-switcher relative animate"></div>
+                                                <div class="clr"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                {% endfor %}
+
+                            </tbody>
+
+                        </table>
+
+                    </div><!-- table-widget -->
+                
+                </div>
+                
+            </div><!-- Slide tabs -->
+            
+            <div class="tab-administrator left">
+                <div class="box0-15">
+                    <div class="table-widget relative">
+                        <h1 class="bottom30 top30">Candidats   
+
+                            <input type="button" value="Ajouter Un Candidat" class="btn bleu right add-widget" data-type="candidat" />
+
+                            <span class="block clr"></span>
+                        </h1>
+                        <table width="100%" cellSpacing="0" cellPadding="0" border="0">
+                            <thead class="header-table">
+                                <tr>
+                                    <th class="column-table">Nom du Candidat</th>
+                                    <th class="column-table">Adresse email</th>
+                                    <th class="column-table">Nom du Projet</th>
+                                    <th class="column-table">nombre des votes</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+                                {% for candidat in candidats %}
+                                    <tr class="row-table">
+                                        <td class="column-table">{{candidat.first_name}} {{candidat.last_name}}</td>
+                                        <td class="column-table">{{candidat.email}}</td>
+                                        <td class="column-table">{{candidat.project.title}}</td>
+                                        <td class="column-table">
+                                            {{candidat.total_votes}}
+                                        </td>
+                                    </tr>
+
+                                {% endfor %}
+
+                            </tbody>
+
+                        </table>
+
+                    </div><!-- table-widget -->
+                </div>
+                
+            </div><!-- Slide tabs -->
+            
+            <div class="tab-administrator left">
+                
+                <h1 class="bottom30">Contenu du Réglement</h1>
+                {% if reglement %}
+                    <h2 class="bottom20">{{reglement.title}}</h2>
+                    <div>{{reglement.content|truncatewords:50}}</div>
+                    <div class="top30">
+                        <input type="button" value="Modifier le réglement" class="btn bleu" id="update-reglement" data-id="{{reglement.id}}" />
+                    </div>
+                    
+                {% else %}
+                    <input type="button" value="Créer le contenu du réglement" class="btn bleu" id="create-reglement" />
+                {% endif %}
+                
+            </div>
+            
+            
+            <div class="tab-administrator left">
+                <div class="box0-15">
+                    {% if config_vote == None %}
+                        <h1>Créer d'abord la configuration du vote pour manipuler l'état du vote sur le site web !</h1>
+                    {% else %}
+                        <h1 class="top30 bottom30">Votes</h1>
+
+                    <div id="" class="pointer animate widget-switch {% if config_vote.active == True %}active{% endif %}" data-type="active_vote" data-uid="{{config_vote.uid}}"><!---  -->
+                            <div class="handler-switcher relative animate"></div>
+                        <div class="clr"></div>
+                    </div>
+                    {% endif %}
+                    
+                    
+                    
+                    
+                    <h1 class="top30 bottom30">Exporter les candidats</h1>
+
+                    <a href="/exporter-candidat/" class="btn bleu" target="_blank">Exporter les utilisateurs en .xlsx</a>
+                </div>
+                
+                
+
+                
+            </div><!-- Slide tabs -->
+            
+            
+            <div class="clr"></div>
+        
+        
+        
+        
+        </div><!-- slider-tabs-administrator -->
+            
+    </div><!-- container-tabs-administrator -->
+</div><!-- container -->
+    
+{% endblock %}
+
+
+{% block js %}
+<script src="{% static 'js/scripts/dist/interface_administrator.js'  %}"></script>
+    
+{% endblock %}

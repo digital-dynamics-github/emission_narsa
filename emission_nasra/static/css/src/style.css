@@ -1,0 +1,127 @@
+/*
+COMMON
+*/
+
+body {
+    background: rgba(0,0,0,0.1);
+}
+.container  {
+    width: 1200px;
+}
+.bleu {
+    background: #3d61ad;
+    color: #fff;
+}
+.bleu-color, a.bleu-color {
+    color: #3d61ad;
+}
+.color {
+    color: #292929;
+}
+.bold {
+    font-weight: bold;
+}
+.btn {
+    display : inline-block;
+    padding: 11px 30px;
+    box-sizing: border-box;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.hidden {
+    overflow: hidden;
+}
+.box0-15 {
+    padding: 0 15px;
+}
+.yellow {
+    background: yellowgreen;
+}
+.souligner {
+    text-decoration: underline;
+}
+.mini-container {
+    width: 600px;
+}
+.white {
+    background: #fff;
+}
+/*
+HEADER
+*/
+header {
+    background: #fff;
+    border-bottom: rgba(0,0,0, 0.2) solid 1px;
+}
+header .horizontal li a {
+    display: block;
+    padding: 20px 30px;
+    border-bottom: transparent solid 3px;
+}
+header .horizontal li+li {
+    margin-left: 20px;
+}
+header .center-header {
+    width: 600px;
+    margin-left: 60px;
+}
+header .center-header.large {
+    width: 850px;
+}
+header .horizontal li a.active {
+    border-bottom: #3d61ad solid 3px;
+    opacity: 1;
+}
+
+
+.widget-switch {
+    width: 70px;
+    height: 26px;
+    border: rgba(0,0,0, 0.2) solid 1px;
+    border-radius: 20px;
+    position: relative;
+    background: rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+.handler-switcher {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    background: #000;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+}
+.widget-switch.active {
+    background: rgba(0,0,0,0.0);
+}
+.widget-switch.active .handler-switcher {
+    left: 44px;
+    background: #3d61ad;
+}
+
+
+.vote-btn.disabled, body input[type="button"].disabled {
+    background: rgba(0,0,0,0.2);
+}
+
+.box-message {
+    width: 500px;
+    padding: 10px 20px;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+.box-message.success {
+    background: #94f856;
+    border: #5fc021 solid 1px;
+}
+
+.box-message.error {
+    background: #fa9494;
+    border: #dd2727 solid 1px;
+}
+

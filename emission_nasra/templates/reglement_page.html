@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static i18n thumbnail  %}
+
+
+{% block body %}
+    
+<div class="container center-auto">
+    
+    <div>
+        <h1>{{title}}</h1>
+        <div>
+            {{content|safe}}
+        </div>
+        
+
+            
+    </div>
+    
+    
+{% endblock %}
+
+
+{% block js %}
+<script src="{% static 'js/scripts/dist/home_page.js'  %}"></script>
+    
+{% endblock %}

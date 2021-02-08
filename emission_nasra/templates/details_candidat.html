@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static i18n thumbnail  %}
+
+
+{% block body %}
+    
+<div class="container center-auto">
+    
+    <div>
+        <h1>Candidats</h1>
+        
+
+            <div class="candidat-item">
+                <h3>{{candidat.first_name}} {{candidat.last_name}}</h3>
+                <p>{{candidat.about|safe}}</p>
+                
+                <input type="button" value="Votez" class="btn yellow large vote-btn" data-uid="{{candidat.uid}}" />
+                <a href="/details-candidat/{{candidat.uid}}/">en savoir plus</a>
+        
+        
+            </div>
+    </div>
+    
+    
+{% endblock %}
+
+
+{% block js %}
+<script src="{% static 'js/scripts/dist/home_page.js'  %}"></script>
+    
+{% endblock %}
