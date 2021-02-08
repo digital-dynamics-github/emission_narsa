@@ -60,7 +60,6 @@ q
 requests
 requests-oauthlib
 rsa
-scikit-learn
 scipy
 six
 sqlparse
@@ -82,12 +81,6 @@ django-autoslug
 html2text
 virtualenv
 redis
-django-redis
-django-redis-cache
-django-rq
-django-rq-scheduler
-django_cron
-django-crontab
 sentry-sdk==0.14.2
-mammoth
-django-bot-crawler-blocker
+xlwt
+django-user-agents==0.4.0
