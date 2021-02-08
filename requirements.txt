@@ -83,4 +83,3 @@ virtualenv
 redis
 sentry-sdk==0.14.2
 xlwt
-django-user-agents==0.4.0
