@@ -125,7 +125,7 @@ WSGI_APPLICATION = 'emission_nasra.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -134,6 +134,17 @@ DATABASES = {
         'PASSWORD': 'admin',
         'HOST': 'localhost',
         'PORT': '5432',
+    }
+}
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'nasra_db',
+        'USER': 'admin_narsa',
+        'PASSWORD': 'x3nrmrnaf0tjdkw6',
+        'HOST': 'db-postgresql-fra1-94728-do-',
+        'PORT': '25060',
     }
 }
 
