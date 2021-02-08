@@ -143,7 +143,7 @@ DATABASES = {
         'NAME': 'nasra_db',
         'USER': 'admin_narsa',
         'PASSWORD': 'x3nrmrnaf0tjdkw6',
-        'HOST': 'db-postgresql-fra1-94728-do-',
+        'HOST': 'db-postgresql-fra1-94728-do-user-8693766-0.b.db.ondigitalocean.com',
         'PORT': '25060',
     }
 }
