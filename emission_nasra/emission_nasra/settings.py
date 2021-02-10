@@ -76,7 +76,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'ipaddr.middleware.IPAddrMiddleware',
+    #'ipaddr.middleware.IPAddrMiddleware',
 ]
 
 ROOT_URLCONF = 'emission_nasra.urls'
