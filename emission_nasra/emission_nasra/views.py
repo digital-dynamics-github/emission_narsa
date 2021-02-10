@@ -168,11 +168,11 @@ class CandidatsPage(TemplateView):
         if config_jauge.count() == 1:
             display_jauge_candidat = True
 
-        total_votes_global = 100
+        total_votes_global = Vote.objects.all().count()
 
         for cand in candidats:
-            cand.pourcent_votes = (float(10) * 100) / float(total_votes_global)
-            cand.pourcent_votes = round(cand.pourcent_votes, 2)
+            cand.pourcent_votes = (float(cand.total_votes) * 100) / float(total_votes_global)
+            cand.pourcent_votes = round(float(cand.pourcent_votes), 2)
             cand.pourcent_votes_string = str(cand.pourcent_votes).replace(",", ".")
 
         stream = Stream.objects.all().filter(active=True)
