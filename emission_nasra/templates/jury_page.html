@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static i18n thumbnail  %}
+
+
+{% block body %}
+
+
+<div class="container center-auto">
+    <div id="block-stream" class="relative">
+        {% if stream_object %}
+            {{stream_object|safe}}
+        {% else %}
+            <img src="{% static 'images/rect_live_stream.png' %}" alt="Tombola" />
+        {% endif %}
+    
+    </div><!-- block stream -->
+    
+    <div id="block-jury" class="relative">
+        <h2 class="bleu-color align-center">
+            
+             {% if LANGUAGE_CODE == "ar" %}
+                لجنة التحكيم لبرنامج
+                &nbsp;<img src="{% static 'images/img_titre_ar.png' %}" alt="NARSA" />
+            {% else %}
+                Jury de l’émission &nbsp;<img src="{% static 'images/img_titre.png' %}" alt="NARSA" />
+            {% endif %}
+            
+             
+        </h2>
+        
+        <div id="listing-jury" class="relative top30">
+            
+            
+            <div class="container center-auto">
+                {% for jury in jurys %}
+                    {% include "include/jury.html" %} 
+                {% endfor %}
+                
+                <div class="clr"></div>
+            
+            </div><!-- container -->
+            
+        </div><!-- listing-candidats -->
+        
+        
+    </div><!-- block-candidat -->
+    
+</div>
+    
+    
+{% endblock %}
+
+
+{% block js %}
+<script src="{% static 'js/scripts/dist/home_page.js'  %}"></script>
+    
+{% endblock %}

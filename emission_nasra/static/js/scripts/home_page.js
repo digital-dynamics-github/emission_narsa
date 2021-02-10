@@ -7,7 +7,48 @@ class HomePage extends Component {
         this.ref_uid = "uid_ref_narsa_2021";
         
         this.events = {
-            "click .vote-btn" : "applyVote"
+            "click .vote-btn" : "applyVote",
+            "click #icon-menu" : "openMobileMenu",
+        }
+        
+    }
+    
+    
+    fixedHeaderMobile(scrollTop) {
+        var header_mobile = dom.get("#header-mobile");
+        if ( header_mobile !== null ) {
+            if ( scrollTop >= 70 ) {
+                header_mobile.addClass("fixed-header");
+            }
+            else {
+                header_mobile.removeClass("fixed-header");
+            }
+            //
+        }
+    }
+    
+    openMobileMenu(evt, self, element) {
+        
+        if ( typeof element === "undefined" ) {
+            element = this;
+        }
+        
+        var class_active = element.hasClass("active");
+        var mobile_menu = dom.get(".cont-menu-mobile");
+        if ( mobile_menu !== null ) {
+            if ( class_active === true ) {
+                element.removeClass("active");
+                mobile_menu.addClass("finish");
+                var timer = setTimeout(function() {
+                    mobile_menu.removeClass("active");
+                    mobile_menu.removeClass("finish");
+                }, 600);
+                
+            }
+            else {
+                this.addClass("active");
+                mobile_menu.addClass("active");
+            }
         }
         
     }
@@ -52,9 +93,47 @@ class HomePage extends Component {
     
     afterRender() {
         
+        var self = this;
+        
         this.verifyVote();
         
+        var value_scroll = 0;
         
+        window.addEventListener("scroll", function(evt) {
+            var scrollTop = document.documentElement.scrollTop;
+            var scrollHeight = document.documentElement.scrollHeight;
+            var height_document = document.documentElement.clientHeight;
+            var scrollPourcent = (scrollTop) / ((scrollHeight) - height_document) * 100;
+            var diff_scroll = scrollPourcent - value_scroll;
+            var pixel_scrolled = (scrollPourcent * scrollHeight ) / 100;
+            
+
+            self.fixedHeaderMobile(scrollTop);
+
+        });
+        
+        
+        this.activeMenu();
+        
+    }
+    
+    activeMenu() {
+        var path = location.pathname;
+        
+        var link_target = dom.get("a.link[href='"+path+"']");
+        
+        var link_active = dom.get(".link.active");
+        
+        console.log(link_active);
+        console.log(link_active);
+        
+        if( link_active !== null ) {
+            link_active.removeClass('active');
+        }
+        
+        if ( link_target !== null ) {
+            link_target.addClass("active");
+        }
     }
 
     verifyVote() {

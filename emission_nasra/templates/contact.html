@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% load static i18n thumbnail  %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block title %}
+
+{% if LANGUAGE_CODE == "ar" %}
+اتصل بنا
+
+{% else %}
+Contact
+{% endif %}
+
+
+{% endblock %}
+{% block class_body_div %}no-top-mobile{% endblock %}
+
+{% block popup_signup %}{% endblock %}
+
+{% block body %}
+
+
+<div id="presentation-page" class="bleu-gris box30 align-center guide-page">
+    <div class="min-container center-auto">
+        <h1 class="bold bottom20">
+            {% if LANGUAGE_CODE == "ar" %}
+            اتصل بنا
+
+            {% else %}
+            Contact
+            {% endif %}
+        
+        </h1>
+        <div class="top20">
+            <a class="spuligner bold bleu-color" href="/">
+                {% if LANGUAGE_CODE == "ar" %}
+                    العودة لصفحة الرئيسية
+                
+                {% else %}
+                    Retour à l'accueil
+                
+                {% endif %}
+                
+                
+                </a>
+        </div>
+    </div><!-- min-container -->
+</div>
+
+
+<div class="min-container center-auto">
+    
+    
+    {% if LANGUAGE_CODE == "ar" %}
+   
+   <div id="form-block" class=" center-auto bottom60 box30">
+       <form id="form-contact" class="" action="{{ request.get_full_path }}" method="post">
+            {% if message %}
+               <div class="notice">{{message}}</div>
+            {% endif %}
+            {% csrf_token %}
+          <div class="">
+              <p class="{% if form.errors.name %}error-p{% endif %}">
+                  <label>
+                      الإسم الكامل
+                      
+                      
+                       <span class="asterix">*</span></label>
+                  <input type="text" placeholder="مثال : محمد عبد الله" name="name" class="required {% if form.errors.name %}error{% endif %}" value="{{form.name.value|default_if_none:''}}" data-rule="string"  />
+                  {% if form.errors.name %}
+                    <span class="message-error-input"><span class="inline-block">{{form.errors.name|striptags}}</span></span>
+                  {% endif %}
+               </p>
+               <p class="{% if form.errors.email %}error-p{% endif %}">
+                  <label>
+                      
+                      البريد الإلكتروني
+                      
+                       <span class="asterix">*</span></label>
+                  <input type="email" placeholder="example : example@domain.com" name="email" class="required ltr-direction {% if form.errors.email %}error{% endif %}" value="{{form.email.value|default_if_none:''}}" data-rule="email" />
+                  {% if form.errors.email %}
+                    <span class="message-error-input"><span class="inline-block">{{form.errors.email|striptags}}</span></span>
+                  {% endif %}
+               </p>
+          </div>
+          
+
+          <div class="clr"></div>
+          <div class="top20">
+              <p class="{% if form.errors.message %}error-p{% endif %}">
+                  <label>
+                      رسالتكم أو تعليقاتكم
+                        
+                      
+                       <span class="asterix">*</span></label>
+                  <textarea placeholder='مثال : رسالة أو تعليق' class="required {% if form.errors.message %}error{% endif %}" value="{{form.message.value|default_if_none:''}}" data-rule="string" name="message"></textarea>
+                  {% if form.errors.message %}
+                    <span class="message-error-input"><span class="inline-block">{{form.errors.message|striptags}}</span></span>
+                  {% endif %}
+              </p>
+          </div>
+          
+          
+          <div class="top40 align-center">
+              
+              <input type="submit" value='ارسل' class="btn bleu" />
+          </div>
+          
+           
+           
+           
+           
+           
+       </form>
+   </div>
+    
+    {% else %}
+        <div id="form-block" class=" center-auto bottom60 box30">
+       <form id="form-contact" class="" action="{{ request.get_full_path }}" method="post">
+            {% if message %}
+               <div class="notice">{{message}}</div>
+            {% endif %}
+            {% csrf_token %}
+          <div class="">
+              <p class="{% if form.errors.name %}error-p{% endif %}">
+                  <label>
+                      Nom Complet
+                      
+                      
+                       <span class="asterix">*</span></label>
+                  <input type="text" placeholder="exemple : Mohamed ali" name="name" class="required {% if form.errors.name %}error{% endif %}" value="{{form.name.value|default_if_none:''}}" data-rule="string"  />
+                  {% if form.errors.name %}
+                    <span class="message-error-input"><span class="inline-block">{{form.errors.name|striptags}}</span></span>
+                  {% endif %}
+               </p>
+               <p class="{% if form.errors.email %}error-p{% endif %}">
+                  <label>
+                      
+                      Adresse Email
+                      
+                       <span class="asterix">*</span></label>
+                  <input type="email" placeholder="example : example@domain.com" name="email" class="required ltr-direction {% if form.errors.email %}error{% endif %}" value="{{form.email.value|default_if_none:''}}" data-rule="email" />
+                  {% if form.errors.email %}
+                    <span class="message-error-input"><span class="inline-block">{{form.errors.email|striptags}}</span></span>
+                  {% endif %}
+               </p>
+          </div>
+          
+
+          <div class="clr"></div>
+          <div class="top20">
+              <p class="{% if form.errors.message %}error-p{% endif %}">
+                  <label>
+                      Message
+                        
+                      
+                       <span class="asterix">*</span></label>
+                  <textarea placeholder='example : lorem ipsum' class="required {% if form.errors.message %}error{% endif %}" value="{{form.message.value|default_if_none:''}}" data-rule="string" name="message"></textarea>
+                  {% if form.errors.message %}
+                    <span class="message-error-input"><span class="inline-block">{{form.errors.message|striptags}}</span></span>
+                  {% endif %}
+              </p>
+          </div>
+          
+          
+          <div class="top40 align-center">
+              
+              <input type="submit" value='Envoyer' class="btn bleu" />
+          </div>
+          
+           
+           
+           
+           
+           
+       </form>
+   </div>
+    
+    
+    {% endif %}
+    
+</div>
+{% endblock %}
+
+
+{% block js %}
+<script src="{% static 'js/scripts/dist/home_page.js'  %}"></script>
+    
+{% endblock %}

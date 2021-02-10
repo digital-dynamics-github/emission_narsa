@@ -1,0 +1,106 @@
+{% load static i18n thumbnail  %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load format_value %}
+
+
+
+<div class="candidat-block">
+    
+    
+    <div class="video-candidat-block left">
+         {{candidat.project.video|safe}}
+    
+    </div><!-- video-candidat-block -->
+    
+    
+    <div class="content-candidat-block right">
+         {% if LANGUAGE_CODE == "ar" %}
+            <h2 class="bold bleu-color bottom15">{{candidat.project.title_ar}}</h2>
+        
+            {% if display_jauge_candidat %}
+                <div class="jauge-candidat relative">
+                    <div class="jauge-value absolute bleu-color bold">{{candidat.pourcent_votes|floatformat}} %</div>
+                    <div class="handler-jauge absolute" style="width : {{candidat.pourcent_votes_string}}%;"></div>
+                </div>
+        
+            {% else %}
+                <div class="candidat-votes">{{candidat.total_votes|format_value}}</div>
+            
+            {% endif %}
+        
+            <div class="resume-content light black-color bottom15 top15">
+                {{candidat.project.content_ar|safe}}
+            </div>
+        
+        
+            
+        
+            <div class="profil-widget">
+                <ul class="horizontal">
+                    <li class="photo-profil">
+                        {% if candidat.photo %}
+                            <img class="radius border" src="/media{% thumbnail candidat.photo 43x43 crop %}" alt="{{candidat.first_name_ar}} {{candidat.last_name_ar}}" />
+                        {% else %}
+                            <img class="radius border" src="{% static 'images/photo_profil_candidat.png' %}" alt="" />
+                        {% endif %}
+                     </li>  
+                    <li class="infos-profil bleu-color bold italic">
+                        <span class="block">{{candidat.first_name_ar}} {{candidat.last_name_ar}}</span>
+                        <span class="block">{{candidat.position_ar}} {{candidat.company_ar}}</span>
+                    </li>
+                </ul>
+
+                <div class="clr"></div>
+
+            </div><!-- profil-widget --->
+        
+            <div class="top20 bottom15">
+                <input type="button" value="صوت ل {{candidat.first_name|capfirst}}" class="btn bleu-color bold yellow large vote-btn shadow" data-uid="{{candidat.uid}}" />
+            </div>
+        
+        {% else %}
+            <h2 class="bold bleu-color bottom15">{{candidat.project.title}}</h2>
+            {% if display_jauge_candidat %}
+                <div class="jauge-candidat relative">
+                    <div class="jauge-value absolute bleu-color bold">{{candidat.pourcent_votes|floatformat}} %</div>
+                    <div class="handler-jauge absolute" style="width : {{candidat.pourcent_votes_string}}%;"></div>
+                </div>
+        
+            {% else %}
+                <div class="candidat-votes">{{candidat.total_votes|format_value}}</div>
+            
+            {% endif %}
+        
+            <div class="resume-content light black-color bottom15 top15">
+                {{candidat.project.content|safe}}
+            </div>
+        
+            <div class="profil-widget">
+                <ul class="horizontal">
+                    <li class="photo-profil">
+                        {% if candidat.photo %}
+                            <img class="radius border" src="/media{% thumbnail candidat.photo 43x43 crop %}" alt="{{candidat.first_name}} {{candidat.last_name}}" />
+                        {% else %}
+                            <img class="radius border" src="{% static 'images/photo_profil_candidat.png' %}" alt="" />
+                        {% endif %}
+                     </li>  
+                    <li class="infos-profil bleu-color bold italic">
+                        <span class="block">{{candidat.first_name}} {{candidat.last_name}}</span>
+                        <span class="block">{{candidat.position}} {{candidat.company}}</span>
+                    </li>
+                </ul>
+
+                <div class="clr"></div>
+
+            </div><!-- profil-widget --->
+        
+            <div class="top20 bottom15">
+                <input type="button" value="Voter Pour {{candidat.first_name|capfirst}}" class="btn bleu-color bold yellow large vote-btn shadow" data-uid="{{candidat.uid}}" />
+            </div>
+        
+        {% endif %}
+    
+    </div><!-- content-candidat-block -->
+    <div class="clr"></div>
+    
+</div><!-- candidat-block --->

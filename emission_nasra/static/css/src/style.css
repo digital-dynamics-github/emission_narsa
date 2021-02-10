@@ -1,25 +1,37 @@
 /*
+FONTS
+
+
+@font-face {
+    font-family: 'latoregular';
+    src: url('../fonts/lato-regular-webfont.eot');
+    src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/lato-regular-webfont.woff2') format('woff2'),
+         url('../fonts/lato-regular-webfont.woff') format('woff'),
+         url('../fonts/lato-regular-webfont.ttf') format('truetype'),
+         url('../fonts/lato-regular-webfont.svg#latoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+
+/*
 COMMON
 */
 
 body {
-    background: rgba(0,0,0,0.1);
+    /*background: rgba(0,0,0,0.1);*/
+    font-family: 'Mukta', sans-serif;
+    direction: ltr;
 }
-.container  {
-    width: 1200px;
-}
-.bleu {
-    background: #3d61ad;
-    color: #fff;
-}
-.bleu-color, a.bleu-color {
-    color: #3d61ad;
-}
-.color {
-    color: #292929;
+.light {
+    font-weight: lighter;
 }
 .bold {
     font-weight: bold;
+}
+.container  {
+    width: 1200px;
 }
 .btn {
     display : inline-block;
@@ -28,7 +40,25 @@ body {
     color: #fff;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
 }
+.btn.shadow {
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.25);
+}
+.bleu {
+    background: #3d61ad;
+    color: #fff;
+}
+.bleu-color, a.bleu-color, .btn.bleu-color {
+    color: #3d61ad;
+}
+.color {
+    color: #292929;
+}
+.bold {
+    font-weight: bold;
+}
+
 .hidden {
     overflow: hidden;
 }
@@ -36,7 +66,7 @@ body {
     padding: 0 15px;
 }
 .yellow {
-    background: yellowgreen;
+    background: #ffe800;
 }
 .souligner {
     text-decoration: underline;
@@ -47,6 +77,40 @@ body {
 .white {
     background: #fff;
 }
+.full-width {
+    max-width: 100%;
+}
+.black {
+    background: #414042;
+    color: #fff;
+}
+.black-color {
+    color: #414042;
+}
+.font20 {
+    font-size: 20px;
+}
+h1 {
+    font-size: 40px;
+}
+.bottom40 {
+    margin-bottom: 40px;
+}
+.italic {
+    font-style: italic;
+}
+.desktop {
+    display: block;
+}
+.mobile {
+    display: none;
+}
+.bleu-gris {
+    background: #eef1f8;
+}
+.min-container {
+    width: 800px;
+}
 /*
 HEADER
 */
@@ -56,24 +120,148 @@ header {
 }
 header .horizontal li a {
     display: block;
-    padding: 20px 30px;
-    border-bottom: transparent solid 3px;
+    padding: 20px 0px;
+    position: relative;
+    font-weight: bold;
 }
 header .horizontal li+li {
-    margin-left: 20px;
+    margin-left: 50px;
 }
 header .center-header {
-    width: 600px;
+    width: 760px;
     margin-left: 60px;
 }
 header .center-header.large {
     width: 850px;
 }
-header .horizontal li a.active {
-    border-bottom: #3d61ad solid 3px;
+header .horizontal li a.active .line-active{
+    
     opacity: 1;
 }
+.line-active {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 45px;
+    width: 30px;
+    height: 3px;
+    background: #fee800;
+    opacity: 0;
+    
+}
+/*
+HOME page
+*/
+h1 .line-active {
+    width: 60px;
+    top: 58px;
+    opacity: 1;
+    
+}
 
+#block-text-home {
+    margin-top: 100px;
+}
+.logo-initiative {
+    left: 725px;
+    top: -34px;
+}
+.block-yellow {
+    padding: 15px 20px;
+    background: #ffe800;
+    border-radius: 7px;
+    width: 800px;
+    line-height: 22px;
+}
+#block-candidat, #block-jury {
+    margin-top: 60px;
+}
+h2 {
+    font-size: 29px;
+}
+
+#listing-candidats {
+    margin-top: 30px;
+    padding-top: 30px;
+    background: url("../images/background_block.png") no-repeat center center;
+}
+
+
+.candidat-item {
+    width: 277px;
+    background: #fff;
+    border: rgba(0,0,0,0.1) solid 1px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+    height: 700px;
+}
+
+.candidat-item .video-candidat iframe{
+    max-width: 100%;
+}
+
+.candidat-item h3 {
+    font-size: 16px;
+}
+.candidat-item .resume-content {
+    font-size: 12px;
+}
+.candidat-item + .candidat-item, .jury-item + .jury-item {
+    margin-left: 30px;
+}
+
+.candidat-item.noLeft + .candidat-item {
+    margin-left: 0px;
+}
+.radius {
+    border-radius: 100%;
+}
+img.border {
+    border : rgba(0,0,0,0.1) solid 1px;
+}
+
+.profil-widget .photo-profil {
+    width: 45px;
+}
+.profil-widget .infos-profil {
+    width: 185px;
+    font-size: 11px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.jury-item {
+    width: 277px;
+}
+.jury-item h3 {
+    font-size: 30px;
+}
+
+.jury-item li+li {
+    margin-left: 20px;
+}
+.top40 {
+    margin-top: 40px;
+}
+
+
+.jury-item p {
+    width: 224px;
+}
+
+
+
+footer {
+    margin-top: 60px;
+    padding: 30px;
+    background: #000;
+}
+#block-stream img, #block-stream iframe {
+    max-width: 100%;
+}
+/*
+switch
+*/
 
 .widget-switch {
     width: 70px;
@@ -105,6 +293,11 @@ header .horizontal li a.active {
 .vote-btn.disabled, body input[type="button"].disabled {
     background: rgba(0,0,0,0.2);
 }
+.vote-btn:hover {
+    background: #3d61ad;
+    color: #ffe800;
+    box-shadow: 5px 5px 8px rgba(0,0,0,0.4);
+}
 
 .box-message {
     width: 500px;
@@ -125,3 +318,86 @@ header .horizontal li a.active {
     border: #dd2727 solid 1px;
 }
 
+.video-candidat-block {
+    width: 450px;
+}
+.video-candidat-block iframe {
+    max-width: 100%;
+}
+
+.content-candidat-block {
+    width: 720px;
+}
+
+.candidat-block + .candidat-block {
+    margin-top: 20px;
+}
+
+.jauge-candidat {
+    width: 100%;
+    height: 5px;
+    background: rgba(0,0,0,0.2);
+}
+.handler-jauge {
+    height: 5px;
+    top: 0;
+    left: 0;
+    background: #3d61ad;
+}
+
+.jauge-value {
+    font-size: 12px;
+    right: 0;
+    top: -25px;
+    
+}
+
+/*
+page content
+*/
+.no-bold {
+    font-weight: normal;
+}
+.content-page p {
+    font-size: 15px;
+    line-height: 26px;
+}
+.content-page p+p, .content-page p+h4, .content-page h4+p, .content-page h2+h4, .content-page h4+h2, .content-page h3+h4, .content-page h4+h3,  .content-page p+ul,  .content-page ul+p{
+    margin-top: 10px;
+}
+
+.content-page p+h2, .content-page h2+p, .content-page p+h3, .content-page h3+p, .content-page h2+h3, .content-page h3+h2, .content-page h4+ul, .content-page ul+h4, .content-page h3+ul, .content-page ul+h3, .content-page h2+ul, .content-page ul+h2 {
+    margin-top: 15px;
+}
+
+.content-page ul li {
+    display: list-item;
+    list-style: disc;
+    margin-left: 30px;
+}
+
+.content-page h2 {
+    font-size: 20px;
+}
+.content-page h1 {
+    font-size: 24px;
+}
+.content-page h3 {
+    font-size: 18px;
+}
+.content-page h4 {
+    font-size: 16px;
+}
+
+body.arabic .content-page li+li {
+    margin-top: 10px;
+}
+
+
+
+/*
+footer
+*/
+footer {
+    color: #fff;
+}

@@ -2,7 +2,7 @@
 
 
 from django.contrib import admin
-from stream.models import Stream
+from stream.models import Stream, BlockText
 
 # Register your models here.
 class StreamAdmin(admin.ModelAdmin):
@@ -11,3 +11,11 @@ class StreamAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Stream, StreamAdmin)
+
+
+class BlockTextAdmin(admin.ModelAdmin):
+   list_display   = ('title', 'description', 'location',  'uid')
+
+
+
+admin.site.register(BlockText, BlockTextAdmin)

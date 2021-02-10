@@ -1,27 +1,183 @@
 {% extends "base.html" %}
 {% load static i18n thumbnail  %}
-
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block body %}
-    
+
+
+
+
+
 <div class="container center-auto">
+    <div id="block-stream" class="relative">
+        {% if stream %}
+            {{stream|safe}}
+        {% else %}
+            <img src="{% static 'images/rect_live_stream.png' %}" alt="Tombola" />
+        {% endif %}
     
-    <div>
-        <h1>Candidats</h1>
-        
-        {% for candidat in candidats %}
-            <div class="candidat-item">
-                <h3>{{candidat.first_name}} {{candidat.last_name}}</h3>
-                <p>{{candidat.about|safe}}</p>
-                
-                <input type="button" value="Votez" class="btn yellow large vote-btn" data-uid="{{candidat.uid}}" />
-                <a href="/details-candidat/{{candidat.uid}}/">en savoir plus</a>
-        
-        
-            </div>
+    </div><!-- block stream -->
+    
+    <div id="block-text-home" class="relative">
+        <h1 class="light bleu-color align-center bottom40 relative">
             
-        {% endfor %}
-    </div>
+            <div class="mobile">
+                <img src="{% static 'images/logo_initiative.png' %}" alt="Mon intiative pour la vie" class="logo-initiative-mobile" />
+            </div>
+            <span class="relative align-center">
+                <img src="{% static 'images/logo_initiative.png' %}" alt="Mon intiative pour la vie" class="logo-initiative absolute desktop" />
+                
+                 {% if text_home %}
+                    {% if LANGUAGE_CODE == "ar" %}
+                        {{text_home.title_ar|safe}}
+                    {% else %}
+                         {{text_home.title|safe}}
+                    {% endif %}
+                
+                 {% else %}
+                    {% if LANGUAGE_CODE == "ar" %}
+                        مبادرتى من أجل الحياة
+                    {% else %}
+                        MON INITIATIVE POUR LA VIE
+                    {% endif %}
+                
+                 {% endif %}
+                
+                <span class="line-active"></span>
+                
+            </span>
+        </h1>
+        
+        
+        {% if text_home %}
+        
+            {% if LANGUAGE_CODE == "ar" %}
+                {{text_home.description_ar|safe}}
+            {% else %}
+                {{text_home.description|safe}}
+            {% endif %}
+            
+            
+        {% else %}
+        
+        
+            {% if LANGUAGE_CODE == "ar" %}
+                <p class="align-center font20 light">
+                    <span class="bleu-color bold">تنظم الوكالة الوطنية للسلامة على الطرق</span> 
+                    بمناسبة اليوم الوطني للسلامة على الطرق
+                     <br />
+                    <span class="bleu-color bold">
+                          18
+                        فبراير
+                        2021
+                    </span> 
+
+                    ، أمسية توعوية من خلال بث تلفزيوني مباشر على قناة
+                    2M
+                    و التي تحتوي على أقسام للتوعية والمعلومات حول السلامة على الطرق.
+
+
+                </p>
+
+                <div class="block-yellow relative center-auto bold align-center font20 top30">
+                   كونوا في الموعد للبث المباشر للسهرة التوعوية بمناسبة  <br />
+                    <span class="bleu-color">
+                        اليوم الوطني للسلامة على الطرق
+                        18
+                        فبراير
+                        2021
+
+                        على الساعة التاسعة مساء.</span>
+
+                </div>
+
+            {% else %}
+                <p class="align-center font20 light">
+                    <span class="bleu-color bold">L’Agence Nationale de la Sécurité Routière</span> organisent à l’occasion de la Journée Nationale de la Sécurité Routière <br />
+                    <span class="bleu-color bold">le 18 février 2021</span> une soirée pour la sensibilisation à travers une émission télévisée en directe sur 2M et qui contient <br />
+                    des rubriques pour la sensibilisation et l’information à la Sécurité Routière.
+
+                </p>
+
+                <div class="block-yellow relative center-auto bold align-center font20 top30">
+                    Soyez en Rendez vous  pour la diffusion en direct de la soirée de sensibilisation à l’occasion <br />
+                    de <span class="bleu-color">la Journée nationale de la sécurité routière le 18 février 2021 à 21h30 .</span>
+
+                </div>
+
+            {% endif %}
+    
+        {% endif  %}
+        
+        
+        
+        
+        
+        
+        
+    
+    </div><!--  block text home -->
+    
+</div>
+    
+    <div id="block-candidat" class="relative">
+        <h2 class="bleu-color align-center">
+            {% if LANGUAGE_CODE == "ar" %}
+                المرشحين لبرنامج
+                &nbsp;<img src="{% static 'images/img_titre_ar.png' %}" alt="NARSA" />
+            {% else %}
+                Candidats de l’émission &nbsp;<img src="{% static 'images/img_titre.png' %}" alt="NARSA" />
+            {% endif %}
+            
+             </h2>
+        
+        <div id="listing-candidats" class="relative">
+            
+            
+            <div class="container center-auto">
+                {% for candidat in candidats %}
+                    {% include "include/candidat.html" %}   
+                {% endfor %}
+                
+                <div class="clr"></div>
+            
+            </div><!-- container -->
+            
+        </div><!-- listing-candidats -->
+        
+        
+    </div><!-- block-candidat -->
+
+
+    <div id="block-jury" class="relative">
+        <h2 class="bleu-color align-center">
+            
+             {% if LANGUAGE_CODE == "ar" %}
+                لجنة التحكيم لبرنامج
+                &nbsp;<img src="{% static 'images/img_titre_ar.png' %}" alt="NARSA" />
+            {% else %}
+                Jury de l’émission &nbsp;<img src="{% static 'images/img_titre.png' %}" alt="NARSA" />
+            {% endif %}
+            
+             
+        </h2>
+        
+        <div id="listing-jury" class="relative top30">
+            
+            
+            <div class="container center-auto">
+                {% for jury in jurys %}
+                    {% include "include/jury.html" %} 
+                {% endfor %}
+                
+                <div class="clr"></div>
+            
+            </div><!-- container -->
+            
+        </div><!-- listing-candidats -->
+        
+        
+    </div><!-- block-candidat -->
     
     
 {% endblock %}

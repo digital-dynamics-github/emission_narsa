@@ -1,0 +1,51 @@
+{% load static i18n thumbnail  %}
+{% get_current_language as LANGUAGE_CODE %}
+
+
+<div class="jury-item left">
+    <div class="photo-jury align-center">
+        
+        {% if jury.photo %}
+            <img class="radius border" src="/media{% thumbnail jury.photo 224x224 crop %}" alt="{{jury.first_name}} {{jury.last_name}}" />
+        {% else %}
+            <img class="radius border" src="{% static 'images/photo_jury.png' %}" alt="{{jury.first_name}} {{jury.last_name}}" />
+        {% endif %}
+        
+    </div>
+    
+    
+    {% if LANGUAGE_CODE == "ar" %}
+        <h3 class="bleu-color align-center">{{jury.first_name_ar}} {{jury.last_name_ar}}</h3>
+    
+    <p class="black-color bold center-auto">
+        {{jury.position_ar}}, {{jury.company_ar}}
+    </p>
+    {% else %}
+    
+        <h3 class="bleu-color align-center">{{jury.first_name}} {{jury.last_name}}</h3>
+    
+        <p class="black-color bold center-auto">
+            {{jury.position}}, {{jury.company}}
+        </p>
+    {% endif %}
+    
+    
+    
+    <div class="align-center top40">
+        <ul class="horizontal inline-block">
+            {% if jury.facebook and not jury.facebook == "" and not jury.facebook == " " %}
+            <li><a class="hover-fade" href="{{jury.facebook}}" target="_blank"><img src="{% static 'images/facebook.png' %}" alt="" /></a></li>
+            {% endif %}
+            {% if jury.twitter and not jury.twitter == "" and not jury.twitter == " " %}
+            <li><a class="hover-fade" href="{{jury.twitter}}" target="_blank"><img src="{% static 'images/twitter.png' %}" alt="" /></a></li>
+            {% endif %}
+            
+            {% if jury.site_web and not jury.site_web == "" and not jury.site_web == " " %}
+            <li><a class="hover-fade" href="{{jury.site_web}}" target="_blank"><img src="{% static 'images/site_web.png' %}" alt="" /></a></li>
+            {% endif %}
+        </ul>
+        <div class="clr"></div>
+    </div>
+    
+    
+</div>

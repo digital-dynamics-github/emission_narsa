@@ -1,0 +1,25 @@
+{% load static i18n thumbnail  %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<meta name="description" content="Agence Nationale de la Sécurité Routière organisent à l'occasion de la Journée Nationale de la Sécurité Routière le 18 février 2021 une soirée pour la sensibilisation à travers une émission télévisée en directe sur 2M et qui contient des rubriques pour la sensibilisation et l'information à la Sécurité Routière."/>
+
+
+<link rel="alternate" href="https://vote-narsa.com/" hreflang="fr-com" />
+
+<link href="{% block link_mage %}https://vote-narsa.com/static/images/cover_default_facebook.png{% endblock %}" rel="image_src" />
+
+<meta property="og:image" content="{% block og_image %}https://vote-narsa.com/static/images/cover_default_facebook.png{% endblock %}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="https://vote-narsa.com/" /> 
+<meta property="og:description" content="{% block og_description %}Agence Nationale de la Sécurité Routière organisent à l'occasion de la Journée Nationale de la Sécurité Routière le 18 février 2021 une soirée pour la sensibilisation à travers une émission télévisée en directe sur 2M et qui contient des rubriques pour la sensibilisation et l'information à la Sécurité Routière.{% endblock %}" />
+<meta property="og:title" content="{% block og_title %}La journée nationale de la sécurité routière {% endblock %}">
+<meta property="og:url" content="{% block og_url %}https://vote-narsa.com/{% endblock %}">
+
+
+<meta property="og:locale" content="fr_FR" />
+
+
+<meta name="twitter:title" content="{% block twitter_title %}La journée nationale de la sécurité routière {% endblock %}">
+<meta name="twitter:description" content="{% block twitter_description %}Agence Nationale de la Sécurité Routière organisent à l'occasion de la Journée Nationale de la Sécurité Routière le 18 février 2021 une soirée pour la sensibilisation à travers une émission télévisée en directe sur 2M et qui contient des rubriques pour la sensibilisation et l'information à la Sécurité Routière.{% endblock %}">
+<meta name="twitter:image" content="{% block twitter_image %}https://vote-narsa.com/static/images/cover_default_twitter.png{% endblock %}">

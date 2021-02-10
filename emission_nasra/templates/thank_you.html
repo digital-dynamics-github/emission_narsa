@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static i18n thumbnail  %}
+{% get_current_language as LANGUAGE_CODE %}
+{% block title %}
+
+
+{% if LANGUAGE_CODE == "ar" %}
+شكرا على الرسالة
+
+{% else %}
+Merci pour votre message
+
+{% endif %}
+
+
+
+{% endblock %}
+
+
+
+{% block body %}
+<div class="box-one-column center-auto top60">
+    <div id="container-confirmation" class="relative relative" data-type="v">
+        <div class="box30 align-center">
+           <div class="align-center top30"><img src="{% static 'images/success.png' %}" alt="Success" /></div>
+           
+            {% if LANGUAGE_CODE == "ar" %}
+                <h1 class="light bottom30 top15 green-color">
+               تم ارسال رسالتكم بنجاح
+                
+                
+            </h1>
+            <div class="box-container center-auto">
+                
+                <div class="top60 align-center bottom60">
+                    <a type="button" href="/" class="btn bleu" >
+                        
+                        العودة لصفحة الرئيسية
+                        
+                        </a>
+                </div>
+                
+            </div>
+            
+            
+            {% else %}
+            
+                <h1 class="light bottom30 top15 green-color">
+                Votre message à été bien envoyé avec succès
+                
+                
+            </h1>
+            <div class="box-container center-auto">
+                
+                <div class="top60 align-center bottom60">
+                    <a type="button" href="/" class="btn bleu" >
+                        
+                        Retour à l'accueil
+                        
+                        </a>
+                </div>
+                
+            </div>
+            
+            {% endif %}
+            
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+{% block js %}
+<script src="{% static 'js/scripts/dist/home_page.js'  %}"></script>
+    
+{% endblock %}
+    
+   

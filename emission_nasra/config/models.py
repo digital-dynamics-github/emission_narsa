@@ -8,6 +8,7 @@ TYPE_CONFIG = (
     ('stream', 'stream'),
     ('vote', 'vote'),
     ('tombola', 'tombola'),
+    ('jauge_candidat', 'jauge_candidat'),
 )
 # Create your models here.
 class Config(models.Model):

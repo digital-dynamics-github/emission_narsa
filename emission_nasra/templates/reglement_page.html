@@ -1,16 +1,27 @@
 {% extends "base.html" %}
 {% load static i18n thumbnail  %}
+{% get_current_language as LANGUAGE_CODE %}
 
 
 {% block body %}
     
 <div class="container center-auto">
     
-    <div>
-        <h1>{{title}}</h1>
+    <div class="box30 content-page">
+        {% if LANGUAGE_CODE == "ar" %}
+            <h1 class="light bottom30">{{title_ar}}</h1>
+        <div>
+            {{content_ar|safe}}
+        </div>
+        
+        {% else %}
+            <h1 class="light">{{title}}</h1>
         <div>
             {{content|safe}}
         </div>
+        
+        {% endif %}
+        
         
 
             

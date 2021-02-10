@@ -25,7 +25,9 @@ class Vote(models.Model):
 
 class Reglement(models.Model):
     title = models.CharField(max_length=200, default="", blank=True)
+    title_ar = models.CharField(max_length=200, default="", blank=True)
     content = models.TextField( default="", blank=True)
+    content_ar = models.TextField( default="", blank=True)
 
 
     date = models.DateField(auto_now=True)

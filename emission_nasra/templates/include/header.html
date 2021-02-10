@@ -1,17 +1,24 @@
-
 {% load static i18n thumbnail  %}
+{% get_current_language as LANGUAGE_CODE %}
 
-
-<header class="white border-bottom relative">
+<header class="white border-bottom relative desktop">
     <div class="container center-auto">
-        <div class="left-header left"><img src="{% static 'images/logo.png' %}" /></div>
-        <div class="center-header left large">
+        <div class="left-header left"><a href="/{{LANGUAGE_CODE}}/"><img src="{% static 'images/logo.png' %}" class="block" /></a></div>
+        <div class="center-header left">
             <ul class="horizontal">
-                <li><a class="fade-hover bleu-color active" href="#">Accueil</a></li>
-                <li><a class="fade-hover bleu-color" href="#">Candidats</a></li>
-                <li><a class="fade-hover bleu-color" href="#">Jury</a></li>
-                <li><a class="fade-hover bleu-color" href="#">Réglements du TOMBOLA</a></li>
-                <li><a class="fade-hover bleu-color" href="#">Contactez-nous</a></li>
+                {% if LANGUAGE_CODE == "ar" %}
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/">تقديم <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/candidats/">المرشحين <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/jury/">لجنة التحكيم <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/reglements/">شروط المسابقة <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/contact/">اتصل بنا <span class="line-active"></span></a></li>
+                {% else %}
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/">Présentation <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/candidats/">Candidats <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/jury/">Jury <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/reglements/">Réglements <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/contact/">Contact <span class="line-active"></span></a></li>
+                {% endif %}
             
             </ul>
             
@@ -20,10 +27,54 @@
         </div>
         <div class="right-header right">
             <ul class="horizontal">
-                
+                <li><a href="/fr/{{request.get_path_page}}" class="fade-hover bleu-color">Français</a></li>
+                <li><a href="/ar/{{request.get_path_page}}" class="fade-hover bleu-color">العربية</a></li>
             </ul>
-        
+            <div class="clr"></div>
         </div> 
         <div class="clr"></div>
     </div>
 </header><!-- header -->
+
+<div id="header-mobile" class="mobile">
+    <div class="relative hidden cont-menu-mobile animate">
+        <div id="menu-mobile" class="mobile absolute white border animate">
+            <ul>
+                {% if LANGUAGE_CODE == "ar" %}
+                    <li><a class="fade-hover bleu-color link" href="#block-stream">تقديم <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/candidats/">المرشحين <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/jury/">لجنة التحكيم <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/reglements/">شروط المسابقة <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/contact/">اتصل بنا <span class="line-active"></span></a></li>
+                {% else %}
+                    <li><a class="fade-hover bleu-color link" href="#">Présentation <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/candidats/">Candidats <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/jury/">Jury <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/reglements/">Réglements <span class="line-active"></span></a></li>
+                    <li><a class="fade-hover bleu-color link" href="/{{LANGUAGE_CODE}}/contact/">Contact <span class="line-active"></span></a></li>
+                {% endif %}
+            </ul>
+
+        </div>
+    </div>
+    
+
+    <div id="logo-header-mobile" class="left">
+        <div id="logo">
+            <a href="/"></a>
+        </div>
+        
+    </div>
+   
+    <div id="icon-menu" class="pointer hover-fade"></div>
+    <div id="langaues-cont" class="">
+        <ul class="horizontal">
+            <li><a href="/fr/{{request.get_path_page}}" class="fade-hover {% if LANGUAGE_CODE == 'fr' %}active{% endif %}"><img src="{% static 'images/fr_flag.png' %}" alt="Fr" /></a></li>
+            <li><a href="/ar/{{request.get_path_page}}" class="fade-hover {% if LANGUAGE_CODE == 'ar' %}active{% endif %}"><img src="{% static 'images/ar_flag.png' %}" alt="Fr" /></a></li>
+        </ul>
+        <div class="clr"></div>
+    </div>
+    
+    <div class="clr"></div>
+    
+</div><!-- header-mobile -->

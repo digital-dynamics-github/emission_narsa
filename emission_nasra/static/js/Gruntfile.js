@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     cssmin: {
           target: {
               files: {
-                  '../css/style.css': ['../css/src/utils.css', '../css/src/table.css', '../css/src/style.css']
+                  '../css/style.css': ['../css/src/utils.css', '../css/src/table.css', '../css/src/style.css', '../css/src/arabic.css', '../css/src/mobile.css']
                 }
           }
     },

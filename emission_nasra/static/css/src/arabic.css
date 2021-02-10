@@ -1,0 +1,44 @@
+body.arabic {
+    font-family: 'Almarai', sans-serif;
+    direction: rtl;
+}
+
+
+body.arabic .horizontal li, body.arabic .left {
+    float: right;
+}
+
+body.arabic .right {
+    float: left;
+}
+
+body.arabic header .center-header {
+    margin-right: 60px;
+    margin-left: auto;
+}
+
+body.arabic header .horizontal li + li {
+    margin-right: 50px;
+    margin-left: 0;
+}
+
+body.arabic .candidat-item + .candidat-item, body.arabic .jury-item + .jury-item {
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+body.arabic .jury-item li + li {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+body.arabic #block-text-home {
+    line-height: 33px;
+}
+body.arabic .block-yellow {
+    line-height: 30px;
+}
+
+body.arabic .logo-initiative {
+    left: -170px;
+}
