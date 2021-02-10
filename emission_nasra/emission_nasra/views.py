@@ -109,6 +109,11 @@ class HomePage(TemplateView):
     def get(self, request):
         request.get_path_page = request.get_full_path().replace("/ar/", "").replace("/fr/", "")
 
+        config_vote = Config.objects.all().filter(type="vote", active=True)
+        accept_vote = False
+        if config_vote.count() > 0:
+            accept_vote = True
+
 
         stream = Stream.objects.all().filter(active=True)
         stream_object = None
@@ -147,7 +152,7 @@ class HomePage(TemplateView):
             script_site = block_script[0]
 
         return render(request, self.template_name, {  "candidats" : candidats, "jurys" : jurys, "text_home" : text_home, "script_site" : script_site, "stream_object" : stream_object,
-                                                      "display_jauge_candidat" : display_jauge_candidat
+                                                      "display_jauge_candidat" : display_jauge_candidat, "accept_vote" : accept_vote
 
                                                       })
 
@@ -157,7 +162,11 @@ class CandidatsPage(TemplateView):
 
     def get(self, request):
         request.get_path_page = request.get_full_path().replace("/ar/", "").replace("/fr/", "")
-        candidats = Candidat.objects.all().order_by("-id")
+
+        config_vote = Config.objects.all().filter(type="vote", active=True)
+        accept_vote = False
+        if config_vote.count() > 0:
+            accept_vote = True
 
         candidats = Candidat.objects.all().order_by("-id")
 
@@ -187,7 +196,7 @@ class CandidatsPage(TemplateView):
             script_site = block_script[0]
 
         return render(request, self.template_name, {  "candidats" : candidats, "script_site" : script_site, "stream_object" : stream_object,
-                                                      "display_jauge_candidat" : display_jauge_candidat })
+                                                      "display_jauge_candidat" : display_jauge_candidat, "accept_vote" : accept_vote })
 
 class ContactPage(TemplateView):
     http_method_names = ['get', 'post']

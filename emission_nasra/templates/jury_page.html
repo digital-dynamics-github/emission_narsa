@@ -2,6 +2,16 @@
 {% load static i18n thumbnail  %}
 
 
+{% block title %}
+{% if LANGUAGE_CODE == "ar" %}
+    لجنة التحكيم لبرنامج NARSA
+{% else %}
+    Jury de l’émission  NARSA
+{% endif %}
+
+{% endblock %}
+
+
 {% block body %}
 
 

@@ -20,14 +20,16 @@
         <div class="box15">
             <h3 class="bold bleu-color bottom15">{{candidat.project.title_ar}}</h3>
             
-            {% if display_jauge_candidat %}
+            {% if display_jauge_candidat and candidat.pourcent_votes < 99 %}
                 <div class="jauge-candidat relative">
                     <div class="jauge-value absolute bleu-color bold none">{{candidat.pourcent_votes|floatformat}} %</div>
                     <div class="handler-jauge absolute" style="width : {{candidat.pourcent_votes_string}}%;"></div>
                 </div>
         
             {% else %}
-                <div class="candidat-votes">{{candidat.total_votes|format_value}}</div>
+                {% if  candidat.pourcent_votes < 99 %}
+                    <div class="candidat-votes">{{candidat.total_votes|format_value}}</div>
+                {% endif %}
             
             {% endif %}
 
@@ -53,9 +55,11 @@
                 <div class="clr"></div>
 
             </div><!-- profil-widget --->
-            <div class="align-center top20 bottom15">
-                <input type="button" value="Voter Pour {{candidat.first_name|capfirst}}" class="btn bleu-color bold yellow large vote-btn shadow" data-uid="{{candidat.uid}}" />
-            </div>
+            {% if accept_vote %}
+                <div class="align-center top20 bottom15">
+                    <input type="button" value="Voter Pour {{candidat.first_name|capfirst}}" class="btn bleu-color bold yellow large vote-btn shadow" data-uid="{{candidat.uid}}" />
+                </div>
+            {% endif %}
         </div><!-- box15 -->
     
     {% else %}
@@ -69,7 +73,9 @@
                 </div>
         
             {% else %}
-                <div class="candidat-votes">{{candidat.total_votes|format_value}}</div>
+                {% if  candidat.pourcent_votes < 99 and candidat.pourcent_votes < 99 %}
+                    <div class="candidat-votes">{{candidat.total_votes|format_value}}</div>
+                {% endif %}
             
             {% endif %}
 
@@ -95,9 +101,12 @@
                 <div class="clr"></div>
 
             </div><!-- profil-widget --->
-            <div class="align-center top20 bottom15">
-                <input type="button" value="Voter Pour {{candidat.first_name|capfirst}}" class="btn bleu-color bold yellow large vote-btn shadow" data-uid="{{candidat.uid}}" />
-            </div>
+            
+            {% if accept_vote %}
+                <div class="align-center top20 bottom15">
+                    <input type="button" value="Voter Pour {{candidat.first_name|capfirst}}" class="btn bleu-color bold yellow large vote-btn shadow" data-uid="{{candidat.uid}}" />
+                </div>
+            {% endif %}
 
 
 

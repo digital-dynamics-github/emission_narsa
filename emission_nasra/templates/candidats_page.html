@@ -2,6 +2,17 @@
 {% load static i18n thumbnail  %}
 {% get_current_language as LANGUAGE_CODE %}
 
+
+{% block title %}
+{% if LANGUAGE_CODE == "ar" %}
+    المرشحين لبرنامج NARSA
+{% else %}
+    Candidats de l’émission NARSA
+{% endif %}
+
+{% endblock %}
+
+
 {% block body %}
 
 

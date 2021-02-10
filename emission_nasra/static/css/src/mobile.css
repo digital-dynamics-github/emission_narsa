@@ -90,12 +90,13 @@
     
     
     #logo {
-        width: 100%;
+        width: 60%;
         position: absolute;
         top: 0;     
         text-align: center;
-        left: 00px;
+        left: 20%;
         top: 22px;
+        z-index: 10;
     }
     
     #logo a{
@@ -112,7 +113,7 @@
         width: 20px;
         height: 20px;
         background: url("../images/menu_mobile.png") no-repeat center center;
-        z-index: 60;
+        z-index: 200;
         margin-top : 23px;
         margin-left: 20px;
         margin-right: auto;
@@ -196,8 +197,11 @@
         float: right;
         margin-right: 20px;
         margin-top: 20px;
+        z-index: 200;
     }
-    
+    body.arabic #langaues-cont {
+        margin-top: 26px;
+    }
     #langaues-cont li+li {
         margin-left: 10px;
     }
@@ -211,6 +215,10 @@
     body.arabic #langaues-cont li+li {
         margin-left: auto;
         margin-right: 10px;
+    }
+    
+    .candidat-item {
+        height: auto;
     }
     
     

@@ -3,6 +3,15 @@
 {% get_current_language as LANGUAGE_CODE %}
 
 
+{% block title %}
+{% if LANGUAGE_CODE == "ar" %}
+{{title_ar}}
+{% else %}
+{{title}}
+{% endif %}
+
+{% endblock %}
+
 {% block body %}
     
 <div class="container center-auto">
