@@ -120,9 +120,9 @@ class HomePage extends Component {
     activeMenu() {
         var path = location.pathname;
         
-        var link_target = dom.get("a.link[href='"+path+"']");
+        var link_target = dom.getAll("a.link[href='"+path+"']");
         
-        var link_active = dom.get(".link.active");
+        var link_active = dom.getAll(".link.active");
         
         console.log(link_active);
         console.log(link_active);
