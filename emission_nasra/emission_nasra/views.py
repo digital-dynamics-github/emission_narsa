@@ -206,6 +206,8 @@ class ContactPage(TemplateView):
     def get(self, request):
         form = ContactForm
 
+        request.get_path_page = request.get_full_path().replace("/ar/", "").replace("/fr/", "")
+
         block_script = BlockText.objects.all().filter(location="script").order_by("-id")
         script_site = None
         if block_script.count() > 0:
@@ -243,6 +245,8 @@ class MerciPage(TemplateView):
 
 
     def get(self, request):
+        request.get_path_page = request.get_full_path().replace("/ar/", "").replace("/fr/", "")
+        
         block_script = BlockText.objects.all().filter(location="script").order_by("-id")
         script_site = None
         if block_script.count() > 0:
