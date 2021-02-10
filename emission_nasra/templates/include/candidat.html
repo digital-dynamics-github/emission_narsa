@@ -66,14 +66,14 @@
         <div class="box15">
             <h3 class="bold bleu-color bottom15">{{candidat.project.title}}</h3>
             
-            {% if display_jauge_candidat %}
+            {% if display_jauge_candidat and candidat.pourcent_votes < 99 %}
                 <div class="jauge-candidat relative">
                     <div class="jauge-value absolute bleu-color bold none">{{candidat.pourcent_votes|floatformat}} %</div>
                     <div class="handler-jauge absolute" style="width : {{candidat.pourcent_votes_string}}%;"></div>
                 </div>
         
             {% else %}
-                {% if  candidat.pourcent_votes < 99 and candidat.pourcent_votes < 99 %}
+                {% if  candidat.pourcent_votes < 99 %}
                     <div class="candidat-votes">{{candidat.total_votes|format_value}}</div>
                 {% endif %}
             

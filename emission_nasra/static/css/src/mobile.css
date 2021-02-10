@@ -247,4 +247,10 @@
     }
     
     
+    #listing-candidats {
+        background: #eef1f8;
+        height: auto;
+        padding-bottom: 30px;
+    }
+    
 }
