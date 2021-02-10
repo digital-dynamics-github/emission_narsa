@@ -220,6 +220,31 @@
     .candidat-item {
         height: auto;
     }
+    .photo-jury img, .video-candidat-block img {
+        max-width: 100%;
+    }
+    
+    
+    .video-candidat-block, .content-candidat-block {
+        width: 100%;
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .content-candidat-block {
+        margin-top: 15px;
+    }
+    
+    body.arabic .video-candidat-block, .content-candidat-block {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .candidat-block + .candidat-block {
+        padding-top: 15px;
+        border-top: rgba(0,0,0,0.1) solid 1px;
+    }
     
     
 }
