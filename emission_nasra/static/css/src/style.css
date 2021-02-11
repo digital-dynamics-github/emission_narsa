@@ -216,6 +216,7 @@ body.arabic .candidat-item .resume-content {
 }
 .candidat-item .resume-content {
     font-size: 12px;
+    height: 120px;
 }
 .candidat-item + .candidat-item, .jury-item + .jury-item {
     margin-left: 30px;

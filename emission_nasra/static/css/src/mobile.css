@@ -239,6 +239,10 @@
         margin-top: 15px;
     }
     
+    .candidat-item .resume-content {
+        height: auto;
+    }
+    
     body.arabic .video-candidat-block, .content-candidat-block {
         margin-left: 0;
         margin-right: 0;
