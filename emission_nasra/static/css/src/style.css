@@ -186,7 +186,10 @@ h2 {
     background: url("../images/background_block.png") no-repeat center center;
 }
 
-
+#prepend-body {
+    position: relative;
+    z-index: 900;
+}
 .candidat-item {
     width: 275px;
     background: #fff;

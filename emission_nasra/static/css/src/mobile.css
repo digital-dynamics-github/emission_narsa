@@ -68,6 +68,9 @@
     .logo-initiative, body.arabic .logo-initiative {
         
     }
+    h2 {
+        line-height: 34px;
+    }
     
     /* header mobile*/
     
@@ -251,6 +254,11 @@
         background: #eef1f8;
         height: auto;
         padding-bottom: 30px;
+    }
+    
+    .box-popup {
+        width: 90%;
+        box-sizing: border-box;
     }
     
 }

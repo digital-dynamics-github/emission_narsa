@@ -164,6 +164,9 @@ class PopupPerson extends Component {
     
     afterRender() {
          dom.get(".overlay-popup").animate(0.5, { "opacity" : 1});
+        
+        var scrollTop = document.documentElement.scrollTop;
+        dom.get(".container-popup").css({ top : scrollTop  });
     }
     
     close() {
@@ -179,6 +182,9 @@ class PopupPerson extends Component {
         });
         
         dom.removeCallScroll( this.name);
+        
+        
+         
         
     }
     
