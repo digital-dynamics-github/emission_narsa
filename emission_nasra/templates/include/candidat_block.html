@@ -50,7 +50,8 @@
                             <img class="radius border" src="{% static 'images/photo_profil_candidat.png' %}" alt="" />
                         {% endif %}
                      </li>  
-                    <li class="infos-profil bleu-color bold italic">
+                    <li class="infos-profil bleu-color bold italic relative">
+                        <div class="id_vote-candidat">{{candidat.id_vote}}</div>
                         <span class="block">{{candidat.first_name_ar}} {{candidat.last_name_ar}}</span>
                         <span class="block">{{candidat.position_ar}} {{candidat.company_ar}}</span>
                     </li>
@@ -98,7 +99,8 @@
                             <img class="radius border" src="{% static 'images/photo_profil_candidat.png' %}" alt="" />
                         {% endif %}
                      </li>  
-                    <li class="infos-profil bleu-color bold italic">
+                    <li class="infos-profil bleu-color bold italic relative">
+                        <div class="id_vote-candidat">{{candidat.id_vote}}</div>
                         <span class="block">{{candidat.first_name}} {{candidat.last_name}}</span>
                         <span class="block">{{candidat.position}} {{candidat.company}}</span>
                     </li>
