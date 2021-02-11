@@ -196,7 +196,7 @@ h2 {
     border: rgba(0,0,0,0.1) solid 1px;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
     margin-bottom: 30px;
-    height: 730px;
+    height: 740px;
 }
 
 .candidat-item .video-candidat iframe{
@@ -212,11 +212,13 @@ body.arabic .candidat-item .resume-content {
 }
 
 .candidat-item h3 {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 20px;
+    height: 40px;
 }
 .candidat-item .resume-content {
     font-size: 12px;
-    height: 120px;
+    height: 140px;
 }
 .candidat-item + .candidat-item, .jury-item + .jury-item {
     margin-left: 30px;
