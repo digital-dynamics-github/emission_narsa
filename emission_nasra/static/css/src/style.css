@@ -188,12 +188,12 @@ h2 {
 
 
 .candidat-item {
-    width: 277px;
+    width: 275px;
     background: #fff;
     border: rgba(0,0,0,0.1) solid 1px;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
     margin-bottom: 30px;
-    height: 710px;
+    height: 625px;
 }
 
 .candidat-item .video-candidat iframe{
