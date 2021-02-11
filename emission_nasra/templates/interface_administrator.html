@@ -15,7 +15,7 @@
         <div class="tabs-side relative container center-auto tabs" id="tabs-container-administrator"  data-name="administrator">
             <ul class="horizontal parent-ul">
                 <li class="bleu-color bold hover-fade pointer tab active">Streams </li>
-                <li class="bleu-color bold hover-fade pointer tab">Block Texte </li>
+                <li class="bleu-color bold hover-fade pointer tab">Présentation Home </li>
                 <li class="bleu-color bold hover-fade pointer tab">Candidats </li>
                 <li class="bleu-color bold hover-fade pointer tab">Jury </li>
                 <li class="bleu-color bold hover-fade pointer tab">réglements </li>
@@ -240,6 +240,36 @@
                         <h1 class="top30 bottom30">Votes</h1>
 
                     <div id="" class="pointer animate widget-switch {% if config_vote.active == True %}active{% endif %}" data-type="active_vote" data-uid="{{config_vote.uid}}"><!---  -->
+                            <div class="absolute label-switcher">
+                                {% if config_vote.active == True %}
+                                    Active
+                                {% else %}
+                                    Non Active
+                                {% endif %}
+                                
+                            </div>
+                        
+                            <div class="handler-switcher relative animate"></div>
+                        <div class="clr"></div>
+                    </div>
+                    {% endif %}
+                    
+                    
+                    
+                     {% if config_demo == None %}
+                        <h1>Créer d'abord la configuration du Démo pour manipuler l'état des votes sur le site! </h1>
+                    {% else %}
+                        <h1 class="top30 bottom30">Démo</h1>
+
+                    <div id="" class="pointer animate widget-switch {% if config_demo.active == True %}active{% endif %}" data-type="active_demo" data-uid="{{config_demo.uid}}">
+                            <div class="absolute label-switcher">
+                                {% if config_demo.active == True %}
+                                    Active
+                                {% else %}
+                                    Non Active
+                                {% endif %}
+                                
+                            </div>
                             <div class="handler-switcher relative animate"></div>
                         <div class="clr"></div>
                     </div>

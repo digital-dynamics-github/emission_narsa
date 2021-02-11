@@ -82,6 +82,12 @@ class InterfaceAdministrator(TemplateView):
         else:
             config = None
 
+        config_demo = Config.objects.all().filter(type="demo", active=True)
+        if config_demo.count() == 1 :
+            config_demo = config_demo[0]
+        else:
+            config_demo = None
+
         reglement = None
         regelement_object = Reglement.objects.all()
         if regelement_object.count() > 0 :
@@ -100,7 +106,7 @@ class InterfaceAdministrator(TemplateView):
 
 
 
-        return render(request, self.template_name, { "streams" : streams, "candidats" : candidats, "config_vote" : config, "reglement" : reglement, "jurys" : jurys, "block_text" : block_text, "block_script" : block_script})
+        return render(request, self.template_name, { "streams" : streams, "candidats" : candidats, "config_vote" : config, "reglement" : reglement, "jurys" : jurys, "block_text" : block_text, "block_script" : block_script, "config_demo" : config_demo})
 
 class HomePage(TemplateView):
     http_method_names = ['get', ]

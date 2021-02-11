@@ -182,8 +182,8 @@ class PopupPerson extends Component {
         
     }
     
-    saveUidRef(uid_ref) {
-        if (typeof(Storage) !== "undefined") {
+    saveUidRef(uid_ref, demo) {
+        if (typeof(Storage) !== "undefined" && demo === false) {
             if ( localStorage.length === 0 && uid_ref !== null && typeof uid_ref !== "undefined") {
                 localStorage.setItem("uid_ref_narsa_2021", uid_ref);
             }
@@ -210,7 +210,7 @@ class PopupPerson extends Component {
                         self.http.post(serialize, function(response) {
                            if ( response.status === "success" ) {
                                var uid_ref = response.uid_ref;
-                               self.saveUidRef(response.uid_ref);
+                               self.saveUidRef(response.uid_ref, response.site_demo);
                                self.renderOtherComponent("Message", { "message" : response.message, "status" : response.status }, dom.get("#prepend-body"), null);
                            }
                         });

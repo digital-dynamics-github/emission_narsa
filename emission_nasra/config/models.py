@@ -9,6 +9,7 @@ TYPE_CONFIG = (
     ('vote', 'vote'),
     ('tombola', 'tombola'),
     ('jauge_candidat', 'jauge_candidat'),
+    ('demo', 'demo'),
 )
 # Create your models here.
 class Config(models.Model):

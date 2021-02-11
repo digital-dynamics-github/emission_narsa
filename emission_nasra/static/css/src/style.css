@@ -281,12 +281,21 @@ switch
     left: 1px;
     top: 1px;
 }
+.label-switcher {
+    right: -120px;
+    top: 0;
+    color: black;
+}
+
+.widget-switch.active .label-switcher{
+    color: limegreen;
+}
 .widget-switch.active {
     background: rgba(0,0,0,0.0);
 }
 .widget-switch.active .handler-switcher {
     left: 44px;
-    background: #3d61ad;
+    background: limegreen;
 }
 
 

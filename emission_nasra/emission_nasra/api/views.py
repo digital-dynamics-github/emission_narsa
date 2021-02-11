@@ -616,6 +616,12 @@ class SavePerson(TemplateAPIViewCustom):
         if candidat.count() == 1 and config_vote.count() > 0:
             candidat = candidat[0]
 
+            config_demo = Config.objects.all().filter(type="demo", active=True)
+            site_demo = False
+            if config_demo.count() == 1:
+                site_demo = True
+
+
             uid_ref = self.generateUID() + "-" + self.generateUID()
             person = Person()
             person.name = data["name"]
@@ -642,7 +648,7 @@ class SavePerson(TemplateAPIViewCustom):
             message = "Candidat n'existe plus, Merci de réessayer plus tard"
 
 
-        return Response({ "status" : status, "message" : message, "uid_ref" : uid_ref}, content_type="application/json", status=200)
+        return Response({ "status" : status, "message" : message, "uid_ref" : uid_ref, "site_demo" : site_demo}, content_type="application/json", status=200)
 
 class DeleteElement(TemplateAPIViewCustom):
     permission_classes = (AllowAny,)
