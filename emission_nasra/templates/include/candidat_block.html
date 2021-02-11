@@ -51,7 +51,7 @@
                         {% endif %}
                      </li>  
                     <li class="infos-profil bleu-color bold italic relative">
-                        <div class="id_vote-candidat">{{candidat.id_vote}}</div>
+                        
                         <span class="block">{{candidat.first_name_ar}} {{candidat.last_name_ar}}</span>
                         <span class="block">{{candidat.position_ar}} {{candidat.company_ar}}</span>
                     </li>
@@ -61,7 +61,8 @@
 
             </div><!-- profil-widget --->
             {% if accept_vote %}
-                <div class="top20 bottom15">
+                <div class="top20 bottom15 relative">
+                    <div class="id_vote-candidat">{{candidat.id_vote}}</div>
                     <input type="button" value="صوت ل{{candidat.first_name_ar|capfirst}}" class="btn bleu-color bold yellow large vote-btn shadow" data-uid="{{candidat.uid}}" />
                 </div>
             {% endif %}
@@ -100,7 +101,6 @@
                         {% endif %}
                      </li>  
                     <li class="infos-profil bleu-color bold italic relative">
-                        <div class="id_vote-candidat">{{candidat.id_vote}}</div>
                         <span class="block">{{candidat.first_name}} {{candidat.last_name}}</span>
                         <span class="block">{{candidat.position}} {{candidat.company}}</span>
                     </li>
@@ -111,7 +111,8 @@
             </div><!-- profil-widget --->
             
             {% if accept_vote %}
-            <div class="top20 bottom15">
+            <div class="top20 bottom15 relative">
+                <div class="id_vote-candidat">{{candidat.id_vote}}</div>
                 <input type="button" value="Voter Pour {{candidat.first_name|capfirst}}" class="btn bleu-color bold yellow large vote-btn shadow" data-uid="{{candidat.uid}}" />
             </div>
             {% endif %}
