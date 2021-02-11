@@ -1028,13 +1028,13 @@ class PopupJury extends Component {
                         </p>
 
 
-                        <p class="none">
-                            <label>Organisation du Jury</label>
+                        <p class="">
+                            <label>Catégorie du Jury</label>
                              <input type="text" name="company" placeholder="Example : ahmed" class="" data-rule="string" value="{{props.company}}" />
                         </p>
 
-                        <p class="none">
-                            <label>Organisation du Jury  <span class="bold">en ARABE</span></label>
+                        <p class="">
+                            <label>Catégorie du Jury  <span class="bold">en ARABE</span></label>
                             <input type="text" name="company_ar" placeholder="Example : ahmed" class="" data-rule="string" value="{{props.company_ar}}" />
                         </p>
                         
