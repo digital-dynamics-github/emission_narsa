@@ -430,7 +430,7 @@ class Message extends Component {
     
     afterRender() {
         var self = this;
-         dom.get(".overlay-popup").animate(0.5, { "opacity" : 1});
+         dom.get(".overlay-message").animate(0.5, { "opacity" : 1});
         var timer = setTimeout(function() {
             
             self.close();
@@ -460,7 +460,7 @@ class Message extends Component {
         return `
        
             <div class="overlay-popup overlay-message"></div>
-            <div class="container-popup container-message">
+            <div class="container-popup container-message fixed">
                 <div class="box-message relative {{props.status}}">{{props.message}}</div>
             </div>
       `; 
