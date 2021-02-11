@@ -371,6 +371,12 @@ switch
     color: #ffe800;
     box-shadow: 5px 5px 8px rgba(0,0,0,0.4);
 }
+.candidat-item .vote-btn {
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .box-message {
     width: 500px;
@@ -429,7 +435,7 @@ body.arabic .content-candidat-block .horizontal li+li {
 .jauge-value {
     font-size: 12px;
     right: 0;
-    top: -25px;
+    top: -17px;
     
 }
 
