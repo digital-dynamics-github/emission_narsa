@@ -45,7 +45,7 @@
                 <ul class="horizontal">
                     <li class="photo-profil">
                         {% if candidat.photo %}
-                            <img class="radius border" src="/media{% thumbnail candidat.photo 43x43 crop %}" alt="{{candidat.first_name_ar}} {{candidat.last_name_ar}}" />
+                            <img class="radius border" src="/media/{% thumbnail candidat.photo 43x43 crop %}" alt="{{candidat.first_name_ar}} {{candidat.last_name_ar}}" />
                         {% else %}
                             <img class="radius border" src="{% static 'images/photo_profil_candidat.png' %}" alt="" />
                         {% endif %}
@@ -93,7 +93,7 @@
                 <ul class="horizontal">
                     <li class="photo-profil">
                         {% if candidat.photo %}
-                            <img class="radius border" src="/media{% thumbnail candidat.photo 43x43 crop %}" alt="{{candidat.first_name}} {{candidat.last_name}}" />
+                            <img class="radius border" src="/media/{% thumbnail candidat.photo 43x43 crop %}" alt="{{candidat.first_name}} {{candidat.last_name}}" />
                         {% else %}
                             <img class="radius border" src="{% static 'images/photo_profil_candidat.png' %}" alt="" />
                         {% endif %}
