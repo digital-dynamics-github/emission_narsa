@@ -5,14 +5,14 @@
 <div class="jury-block">
 <div class="video-candidat-block left">
      {% if jury.photo %}
-            <img class="border" src="/media{% thumbnail jury.photo 450x450 crop %}" alt="{{jury.first_name}} {{jury.last_name}}" />
+            <img class="border" src="/media{% thumbnail jury.photo 450x300 crop %}" alt="{{jury.first_name}} {{jury.last_name}}" />
         {% endif %}
 
 </div><!-- video-candidat-block -->
 
 <div class="content-candidat-block right">
      {% if LANGUAGE_CODE == "ar" %}
-        <h3 class="bleu-color align-center">{{jury.first_name_ar}} {{jury.last_name_ar}}</h3>
+        <h3 class="bleu-color">{{jury.first_name_ar}} {{jury.last_name_ar}}</h3>
     
         <div class="resume-content light black-color bottom15 top15">
             {{jury.about_ar|safe}}
@@ -23,7 +23,7 @@
     </p>
     {% else %}
     
-        <h3 class="bleu-color align-center">{{jury.first_name}} {{jury.last_name}}</h3>
+        <h3 class="bleu-color">{{jury.first_name}} {{jury.last_name}}</h3>
         
         <div class="resume-content light black-color bottom15 top15">
             {{jury.about|safe}}
@@ -33,6 +33,23 @@
             {{jury.position}}, {{jury.company}}
         </p>
     {% endif %}
+    
+    
+    <div class="top30">
+        <ul class="horizontal inline-block">
+            {% if jury.facebook and not jury.facebook == "" and not jury.facebook == " " %}
+            <li><a class="hover-fade" href="{{jury.facebook}}" target="_blank"><img src="{% static 'images/facebook.png' %}" alt="" /></a></li>
+            {% endif %}
+            {% if jury.twitter and not jury.twitter == "" and not jury.twitter == " " %}
+            <li><a class="hover-fade" href="{{jury.twitter}}" target="_blank"><img src="{% static 'images/twitter.png' %}" alt="" /></a></li>
+            {% endif %}
+            
+            {% if jury.site_web and not jury.site_web == "" and not jury.site_web == " " %}
+            <li><a class="hover-fade" href="{{jury.site_web}}" target="_blank"><img src="{% static 'images/site_web.png' %}" alt="" /></a></li>
+            {% endif %}
+        </ul>
+        <div class="clr"></div>
+    </div>
     
 </div>
 <div class="clr"></div>

@@ -337,6 +337,14 @@ switch
 .content-candidat-block {
     width: 720px;
 }
+.content-candidat-block .horizontal li+li {
+    margin-left: 20px;
+}
+
+body.arabic .content-candidat-block .horizontal li+li {
+    margin-left: auto;
+    margin-right: 20px;
+}
 
 .candidat-block + .candidat-block {
     margin-top: 20px;
