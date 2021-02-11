@@ -442,6 +442,7 @@ class Message extends Component {
         var self = this;
         dom.get(".overlay-message").animate(0.5, { "opacity" : 0, onComplete : function() {
                 dom.get(".container-message").remove();
+                dom.get(".overlay-message").remove();
             } 
         });
         
