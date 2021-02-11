@@ -16,6 +16,7 @@ class Project(models.Model):
     cover = models.ImageField(upload_to="uploads/project/cover", null=True, blank=True)
     video = models.TextField(blank=True, default="")
     category = models.CharField(max_length=200, blank=True, default="")
+    category_ar = models.CharField(max_length=200, blank=True, default="")
 
     date = models.DateField(auto_now=True)
     date_created = models.DateField(auto_now_add=True)

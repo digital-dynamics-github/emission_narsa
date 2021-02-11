@@ -274,6 +274,8 @@ class GetCandidat(TemplateAPIViewCustom):
                 "title_project_ar" : candidat.project.title_ar,
                 "second_title_project_ar" : candidat.project.second_title_ar,
                 "content_project_ar" : candidat.project.content_ar,
+                "category_project_" : candidat.project.category,
+                "category_project_ar" : candidat.project.category_ar,
                 "first_name" : candidat.first_name,
                 "last_name" : candidat.last_name,
                 "first_name_ar" : candidat.first_name_ar,
@@ -376,6 +378,8 @@ class SaveCandidat(TemplateAPIViewCustom):
         project.second_title_ar = data["second_title_project_ar"]
         project.content_ar = data["content_project_ar"]
         project.video = data["video_project"]
+        project.category = data["category_project"]
+        project.category_ar = data["category_project_ar"]
 
         project.uid = self.generateUID()
 
@@ -447,6 +451,8 @@ class UpdateCandidat(TemplateAPIViewCustom):
             project.title_ar = data["title_project_ar"]
             project.second_title_ar = data["second_title_project_ar"]
             project.content_ar = data["content_project_ar"]
+            project.category = data["category_project"]
+            project.category_ar = data["category_project_ar"]
             project.video = data["video_project"]
 
             project.save()

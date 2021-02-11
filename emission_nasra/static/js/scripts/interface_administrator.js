@@ -164,6 +164,8 @@ class InterfaceAdministrator extends Component {
                 "about_ar" : "",
                 "position_ar" : "",
                 "company_ar" : "",
+                "category_project" : "",
+                "category_project_ar" : "",
             }
             self.renderOtherComponent("PopupCandidat", props, parent, null);
         }
@@ -486,6 +488,10 @@ class PopupCandidat extends Component {
                             <label>Titre du projet <span class="asterix">*</span></label>
                             <input type="text" name="title_project" placeholder="Example : Stream page home" class="required" data-rule="string" value="{{props.title_project}}" />
                         </p>
+                        <p class="">
+                            <label>Catégorie du projet </label>
+                            <input type="text" name="category_project" placeholder="Example : Stream page home" class="" data-rule="string" value="{{props.category_project}}" />
+                        </p>
                         <p class="none">
                             <label>Second Titre du projet <span class="asterix">*</span></label>
                             <input type="text" name="second_title_project" placeholder="Example : Stream page home" class="" data-rule="string" value="{{props.second_title_project}}" />
@@ -505,6 +511,11 @@ class PopupCandidat extends Component {
                         <p>
                             <label>Contenu du projet  <span class="bold">en ARABE</span> <span class="asterix">*</span></label>
                             <textarea name="content_project_ar" class="required" data-rule="string" placeholder="Example : lorem ipsum">{{props.content_project_ar}}</textarea>
+                        </p>
+
+                        <p class="">
+                            <label>Catégorie du projet <span class="bold">en ARABE</span></label>
+                            <input type="text" name="category_project_ar" placeholder="Example : Stream page home" class="" data-rule="string" value="{{props.category_project_ar}}" />
                         </p>
 
 

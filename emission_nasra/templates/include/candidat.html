@@ -18,6 +18,12 @@
     
     {% if LANGUAGE_CODE == "ar" %}
         <div class="box15">
+            
+            {% if candidat.project.category_ar %}
+                <div><span class="label-category">{{candidat.project.category_ar}}</span></div>
+                
+            {% endif %}
+            
             <h3 class="bold bleu-color bottom15">{{candidat.project.title_ar}}</h3>
             
             {% if display_jauge_candidat and candidat.pourcent_votes < 99 %}
@@ -64,6 +70,10 @@
     
     {% else %}
         <div class="box15">
+            {% if candidat.project.category %}
+                <div><span class="label-category">{{candidat.project.category}}</span></div>
+                
+            {% endif %}
             <h3 class="bold bleu-color bottom15">{{candidat.project.title}}</h3>
             
             {% if display_jauge_candidat and candidat.pourcent_votes < 99 %}
