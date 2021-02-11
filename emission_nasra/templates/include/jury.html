@@ -14,7 +14,7 @@
     
     {% if LANGUAGE_CODE == "ar" %}
         {% if jury.company_ar %}
-            <div><span class="label-category">{{jury.company_ar}}</span></div>
+            <div class="align-center"><span class="label-category">{{jury.company_ar}}</span></div>
 
         {% endif %}
         <h3 class="bleu-color align-center">{{jury.first_name_ar}} {{jury.last_name_ar}}</h3>
@@ -24,7 +24,7 @@
     </p>
     {% else %}
         {% if jury.company %}
-            <div><span class="label-category">{{jury.company}}</span></div>
+            <div class="align-center"><span class="label-category">{{jury.company}}</span></div>
 
         {% endif %}
         <h3 class="bleu-color align-center">{{jury.first_name}} {{jury.last_name}}</h3>
