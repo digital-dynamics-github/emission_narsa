@@ -53,7 +53,7 @@ Contact
     
     {% if LANGUAGE_CODE == "ar" %}
    
-   <div id="form-block" class=" center-auto bottom60 box30">
+   <div id="form-block" class=" center-auto bottom60 box30" style="min-height: 600px;">
        <form id="form-contact" class="" action="{{ request.get_full_path }}" method="post">
             {% if message %}
                <div class="notice">{{message}}</div>

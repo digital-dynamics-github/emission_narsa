@@ -20,9 +20,11 @@ Merci pour votre message
 
 {% block body %}
 <div class="box-one-column center-auto top60">
-    <div id="container-confirmation" class="relative relative" data-type="v">
+    <div id="container-confirmation" class="relative relative" data-type="v" style="min-height: 800px;">
         <div class="box30 align-center">
-           <div class="align-center top30"><img src="{% static 'images/success.png' %}" alt="Success" /></div>
+           <div class="align-center top30">
+               <img src="{% static 'images/success.png' %}" alt="Success" />
+            </div>
            
             {% if LANGUAGE_CODE == "ar" %}
                 <h1 class="light bottom30 top15 green-color">
