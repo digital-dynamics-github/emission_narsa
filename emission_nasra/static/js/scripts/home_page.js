@@ -61,8 +61,19 @@ class HomePage extends Component {
             var state_person = self.verifyperson();
            if ( state_person === false ) {
                var parent = dom.get("#prepend-body");
-
-               self.renderOtherComponent("PopupPerson", { "uid" : uid_candidat }, parent, null);
+               if ( typeof lang !== "undefined" ) {
+                   if ( lang === "ar" ) {
+                       self.renderOtherComponent("PopupPersonAR", { "uid" : uid_candidat }, parent, null);
+                   }
+                   else {
+                       self.renderOtherComponent("PopupPerson", { "uid" : uid_candidat }, parent, null);
+                   }
+               }
+               else {
+                   self.renderOtherComponent("PopupPerson", { "uid" : uid_candidat }, parent, null);
+               }
+               
+               
            }
         }
         else {
@@ -279,6 +290,134 @@ class PopupPerson extends Component {
     }
 }
 
+class PopupPersonAR extends Component {
+    
+    constructor(params) {
+        super(params);
+        
+        this.events = {
+            "click .action-popup" : "actionPopup"
+            
+        }
+    }
+    
+    afterRender() {
+         dom.get(".overlay-popup").animate(0.5, { "opacity" : 1});
+        
+        var scrollTop = document.documentElement.scrollTop;
+        dom.get(".container-popup").css({ top : scrollTop  });
+    }
+    
+    close() {
+        var self = this;
+        dom.get(".overlay-popup").animate(0.5, { "opacity" : 0, onComplete : function() {
+                dom.get(".overlay-popup").remove();
+            } 
+        });
+        
+        dom.get(".container-popup").animate(0.5, { "opacity" : 0, onComplete : function() {
+                dom.get(".container-popup").remove();
+            } 
+        });
+        
+        dom.removeCallScroll( this.name);
+        
+        
+         
+        
+    }
+    
+    saveUidRef(uid_ref, demo) {
+        if (typeof(Storage) !== "undefined" && demo === false) {
+            if ( localStorage.length === 0 && uid_ref !== null && typeof uid_ref !== "undefined") {
+                localStorage.setItem("uid_ref_narsa_2021", uid_ref);
+            }
+        }
+    }
+    
+    actionPopup(evt, self) {
+        var action = this.data("action");
+        
+        if (action === "close") {
+            self.close();
+        }    
+        
+        if ( action === "save" ) {
+            var form = self.parent.find("form");
+            
+            form.runPlugin("validator", {
+                parent : form,
+                valid : function(response, s, n , t) {
+                    if (response) {
+                       var serialize = form.serialize("object");
+                        var url = "/api/site/save-person/";
+                        self.http.url = url;
+                        self.http.post(serialize, function(response) {
+                           if ( response.status === "success" ) {
+                               var uid_ref = response.uid_ref;
+                               self.saveUidRef(response.uid_ref, response.site_demo);
+                               self.renderOtherComponent("Message", { "message" : response.message, "status" : response.status }, dom.get("#prepend-body"), null);
+                           }
+                        });
+                    }
+                },
+                error : function() {
+                    evt.preventDefault();
+                    return false;
+                }
+            });
+        }
+    }
+    
+    
+    
+    render() {
+        return `
+       
+            <div class="overlay-popup"></div>
+            <div class="container-popup">
+                <div class="box-popup relative center-auto border shadow">
+                    <h2 class="bottom30">التصويت والمشاركة تلقائيًا في المسابقة</h2>
+                    <form id="form-person">
+                        <input type="hidden" name="candidat" value="{{props.uid}}" />
+                        <p>
+                            <label>الاسم الكامل <span class="asterix">*</span></label>
+                            <input type="text" name="name" placeholder="مثال : أحمد حسن" class="required" data-rule="string" />
+                        </p>
+                        
+                        <p>
+                            <label>البريد الالكتروني  <span class="asterix">*</span></label>
+                            <input type="text" name="email" placeholder="Example : example@example.com" class="required" data-rule="email" />
+                        </p>
+
+                        <p>
+                            <label>رقم الهاتف <span class="asterix">*</span></label>
+                            <input type="text" name="phone" placeholder="Example : 0666666666" class="required" data-rule="string" />
+                        </p>
+
+                        <p class="relative">
+                            <input type="checkbox" name="accept_reglement" class="required" data-rule="boolean" />
+                            <label>أوافق على <a href="/reglements/" target="_blank" class="bleu-color souligner">شروط المسابقة</a></label>
+                            
+                        </p>
+                        
+                        <p>
+                            <span class="asterix">*</span> <span> : Champs obligatoires</span>
+                        </p>
+
+                        <div class="align-center top30">
+                            <input type="button" value="إغلاق" class="action-popup btn gris" data-action="close" />
+                            <input type="button" value="أصوت" class="action-popup btn bleu" data-action="save" />
+                        </div>
+                        
+                    </form>
+                
+                </div>
+            </div>
+      `; 
+    }
+}
+
 
 
 class Message extends Component {
@@ -333,6 +472,7 @@ class Message extends Component {
 
 invock.export("Message", Message);
 invock.export("PopupPerson", PopupPerson);
+invock.export("PopupPersonAR", PopupPersonAR);
 
 invock.export("HomePage", HomePage);
 invock.mount({ parent : "body", root : "{% HomePage parent_name='body' %}" });

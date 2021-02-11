@@ -42,3 +42,7 @@ body.arabic .block-yellow {
 body.arabic .logo-initiative {
     left: -170px;
 }
+body.arabic input[type="button"]+input[type="button"] {
+    margin-right: 20px;
+    margin-left: 0;
+}
