@@ -261,4 +261,8 @@
         box-sizing: border-box;
     }
     
+    body.arabic .resume-content {
+        line-height: 30px;
+    }
+    
 }
