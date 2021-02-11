@@ -402,7 +402,7 @@ class PopupPersonAR extends Component {
                         </p>
                         
                         <p>
-                            <span class="asterix">*</span> <span> : Champs obligatoires</span>
+                            <span class="asterix">*</span> <span> : الحقول المطلوبة</span>
                         </p>
 
                         <div class="align-center top30">
