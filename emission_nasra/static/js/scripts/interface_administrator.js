@@ -338,19 +338,19 @@ class PopupStream extends Component {
                 <div class="box-popup relative center-auto border shadow">
                     <h2 class="bottom30">Stream</h2>
                     <form id="form-stream">
-                        <p>
+                        <p class="none">
                             <label>Titre du Stream <span class="asterix">*</span></label>
-                            <input type="text" name="title" placeholder="Example : Stream page home" class="required" data-rule="string" value="{{props.title}}" />
+                            <input type="text" name="title" placeholder="Example : Stream page home" class="" data-rule="string" value="{{props.title}}" />
                         </p>
-                        <p>
+                        <p class="none">
                             <label>Description du Stream</label>
                             <textarea name="description" data-rule="string" placeholder="Example : lorem ipsum">{{props.description}}</textarea>
                         </p>
-                        <p>
+                        <p class="none">
                             <label>Titre du Stream <span class="bold">en ARABE</span> <span class="asterix">*</span></label>
-                            <input type="text" name="title_ar" placeholder="Example : Stream page home" class="required" data-rule="string" value="{{props.title_ar}}" />
+                            <input type="text" name="title_ar" placeholder="Example : Stream page home" class="" data-rule="string" value="{{props.title_ar}}" />
                         </p>
-                        <p>
+                        <p class="none">
                             <label>Description du Stream <span class="bold">en ARABE</span></label>
                             <textarea name="description_ar" data-rule="string" placeholder="Example : lorem ipsum">{{props.description_ar}}</textarea>
                         </p>
