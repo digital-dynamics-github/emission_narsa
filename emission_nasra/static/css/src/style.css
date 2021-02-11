@@ -310,8 +310,17 @@ footer {
     top: -19px;
 }
 
+.inline-block .id_vote-candidat {
+    right: -13px;
+}
+
 body.arabic .id_vote-candidat {
     left: 0;
+    right: auto;
+}
+
+body.arabic .inline-block .id_vote-candidat {
+    left: -13px;
     right: auto;
 }
 /*
