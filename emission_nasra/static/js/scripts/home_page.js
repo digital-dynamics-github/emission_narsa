@@ -445,11 +445,6 @@ class Message extends Component {
             } 
         });
         
-        dom.get(".container-message").animate(0.5, { "opacity" : 0, onComplete : function() {
-                dom.get(".container-message").remove();
-            } 
-        });
-        
     }
     
     
