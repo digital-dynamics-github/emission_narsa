@@ -1,0 +1,39 @@
+{% load static i18n thumbnail  %}
+{% get_current_language as LANGUAGE_CODE %}
+
+
+<div class="jury-block">
+<div class="video-candidat-block left">
+     {% if jury.photo %}
+            <img class="border" src="/media{% thumbnail jury.photo 450x450 crop %}" alt="{{jury.first_name}} {{jury.last_name}}" />
+        {% endif %}
+
+</div><!-- video-candidat-block -->
+
+<div class="content-candidat-block right">
+     {% if LANGUAGE_CODE == "ar" %}
+        <h3 class="bleu-color align-center">{{jury.first_name_ar}} {{jury.last_name_ar}}</h3>
+    
+        <div class="resume-content light black-color bottom15 top15">
+            {{jury.about_ar|safe}}
+        </div>
+    
+    <p class="black-color bold center-auto">
+        {{jury.position_ar}}, {{jury.company_ar}}
+    </p>
+    {% else %}
+    
+        <h3 class="bleu-color align-center">{{jury.first_name}} {{jury.last_name}}</h3>
+        
+        <div class="resume-content light black-color bottom15 top15">
+            {{jury.about|safe}}
+        </div>
+    
+        <p class="black-color bold center-auto">
+            {{jury.position}}, {{jury.company}}
+        </p>
+    {% endif %}
+    
+</div>
+<div class="clr"></div>
+</div>

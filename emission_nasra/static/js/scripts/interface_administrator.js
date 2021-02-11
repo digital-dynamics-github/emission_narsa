@@ -1007,12 +1007,12 @@ class PopupJury extends Component {
                             <input type="text" name="email" placeholder="Example : ahmed" class="" data-rule="email" value="{{props.email}}" />
                         </p>
                         
-                        <p class="none">
+                        <p class="">
                             <label>A propos du Jury</label>
                             <textarea name="about" data-rule="string" placeholder="Example : lorem ipsum">{{props.about}}</textarea>
                         </p>
 
-                        <p class="none">
+                        <p class="">
                             <label>A propos du Jury  <span class="bold">en ARABE</span></label>
                             <textarea name="about_ar" data-rule="string" placeholder="Example : lorem ipsum">{{props.about_ar}}</textarea>
                         </p>
