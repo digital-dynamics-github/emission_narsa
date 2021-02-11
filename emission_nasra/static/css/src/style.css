@@ -287,6 +287,12 @@ footer {
 #block-stream img, #block-stream iframe {
     max-width: 100%;
 }
+#block-stream.stream-active {
+    background: #000;
+}
+#block-stream iframe {
+    text-align: center;
+}
 /*
 switch
 */

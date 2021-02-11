@@ -9,7 +9,7 @@
 
 
 <div class="container center-auto">
-    <div id="block-stream" class="relative">
+    <div id="block-stream" class="relative {% if stream_object %}stream-active{% endif %}">
         {% if stream_object %}
             {{stream_object.code|safe}}
         {% else %}
