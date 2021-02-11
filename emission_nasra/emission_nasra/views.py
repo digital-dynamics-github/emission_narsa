@@ -299,7 +299,7 @@ class ExportCandidat(TemplateView):
         font_style = xlwt.XFStyle()
         font_style.font.bold = True
 
-        columns = ['Nom complet', 'Adresse email', 'Numéro de téléphone', ]
+        columns = ['ID', 'Nom complet', 'Adresse email', 'Numéro de téléphone', ]
 
         for col_num in range(len(columns)):
             ws.write(row_num, col_num, columns[col_num], font_style)
@@ -307,7 +307,7 @@ class ExportCandidat(TemplateView):
         # Sheet body, remaining rows
         font_style = xlwt.XFStyle()
 
-        rows = Person.objects.all().values_list('name', 'email', 'phone')
+        rows = Person.objects.all().values_list('id', 'name', 'email', 'phone')
         for row in rows:
             row_num += 1
             for col_num in range(len(row)):
