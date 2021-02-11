@@ -224,6 +224,7 @@ class PopupPerson extends Component {
                        var serialize = form.serialize("object");
                         var url = "/api/site/save-person/";
                         self.http.url = url;
+                        self.close();
                         self.http.post(serialize, function(response) {
                            if ( response.status === "success" ) {
                                var uid_ref = response.uid_ref;
@@ -352,6 +353,7 @@ class PopupPersonAR extends Component {
                        var serialize = form.serialize("object");
                         var url = "/api/site/save-person/";
                         self.http.url = url;
+                        self.close();
                         self.http.post(serialize, function(response) {
                            if ( response.status === "success" ) {
                                var uid_ref = response.uid_ref;

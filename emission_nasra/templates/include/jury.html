@@ -6,9 +6,7 @@
     <div class="photo-jury align-center">
         
         {% if jury.photo %}
-            <img class="radius border" src="/media{% thumbnail jury.photo 224x224 crop %}" alt="{{jury.first_name}} {{jury.last_name}}" />
-        {% else %}
-            <img class="radius border" src="{% static 'images/photo_jury.png' %}" alt="{{jury.first_name}} {{jury.last_name}}" />
+            <img class="radius border" src="/media/{% thumbnail jury.photo 224x224 crop %}" alt="{{jury.first_name}} {{jury.last_name}}" />
         {% endif %}
         
     </div>

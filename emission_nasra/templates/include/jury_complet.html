@@ -5,7 +5,7 @@
 <div class="jury-block">
 <div class="video-candidat-block left">
      {% if jury.photo %}
-            <img class="border" src="/media{% thumbnail jury.photo 450x300 crop %}" alt="{{jury.first_name}} {{jury.last_name}}" />
+            <img class="border" src="/media/{% thumbnail jury.photo 450x300 crop %}" alt="{{jury.first_name}} {{jury.last_name}}" />
         {% endif %}
 
 </div><!-- video-candidat-block -->
