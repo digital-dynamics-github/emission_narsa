@@ -47,6 +47,7 @@ class Candidat(models.Model):
     total_votes = models.IntegerField(blank=True, default="0")
     pourcent_votes = models.FloatField(blank=True, default="0")
     uid = models.CharField(max_length=200, blank=True, default="")
+    id_vote = models.CharField(max_length=200, blank=True, default="")
 
     date = models.DateField(auto_now=True)
     date_created = models.DateField(auto_now_add=True)
