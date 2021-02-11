@@ -244,7 +244,7 @@
         margin-right: 0;
     }
     
-    .candidat-block + .candidat-block {
+    .candidat-block + .candidat-block, .jury-block+.jury-block {
         padding-top: 15px;
         border-top: rgba(0,0,0,0.1) solid 1px;
     }

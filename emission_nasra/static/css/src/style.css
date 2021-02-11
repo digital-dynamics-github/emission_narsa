@@ -229,6 +229,8 @@ body.arabic .candidat-item.noLeft + .candidat-item {
     margin-right: 0px;
 }
 
+
+
 /*
 .candidat-item+.candidat-item+.candidat-item+.candidat-item+.candidat-item
 body.arabic  .candidat-item+.candidat-item+.candidat-item+.candidat-item+.candidat-item {
@@ -368,7 +370,7 @@ body.arabic .content-candidat-block .horizontal li+li {
     margin-right: 20px;
 }
 
-.candidat-block + .candidat-block {
+.candidat-block + .candidat-block, .jury-block+.jury-block {
     margin-top: 20px;
 }
 
