@@ -190,9 +190,13 @@ class CandidatsPage(TemplateView):
         total_votes_global = Vote.objects.all().count()
 
         for cand in candidats:
-            cand.pourcent_votes = (float(cand.total_votes) * 100) / float(total_votes_global)
-            cand.pourcent_votes = round(float(cand.pourcent_votes), 2)
-            cand.pourcent_votes_string = str(cand.pourcent_votes).replace(",", ".")
+            if total_votes_global > 0:
+                cand.pourcent_votes = (float(cand.total_votes) * 100) / float(total_votes_global)
+                cand.pourcent_votes = round(float(cand.pourcent_votes), 2)
+                cand.pourcent_votes_string = str(cand.pourcent_votes).replace(",", ".")
+            else:
+                cand.pourcent_votes = 0
+                cand.pourcent_votes_string = "0"
 
         stream = Stream.objects.all().filter(active=True)
         stream_object = None
