@@ -290,7 +290,7 @@ footer {
 #block-stream.stream-active {
     background: #000;
 }
-#block-stream iframe {
+#block-stream.stream-active {
     text-align: center;
 }
 /*
