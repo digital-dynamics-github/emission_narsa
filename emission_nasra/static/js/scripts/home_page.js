@@ -438,17 +438,15 @@ class Message extends Component {
     
     close() {
         var self = this;
-        dom.get(".overlay-popup").animate(0.5, { "opacity" : 0, onComplete : function() {
-                dom.get(".overlay-popup").remove();
+        dom.get(".overlay-message").animate(0.5, { "opacity" : 0, onComplete : function() {
+                dom.get(".container-message").remove();
             } 
         });
         
-        dom.get(".container-popup").animate(0.5, { "opacity" : 0, onComplete : function() {
-                dom.get(".container-popup").remove();
+        dom.get(".container-message").animate(0.5, { "opacity" : 0, onComplete : function() {
+                dom.get(".container-message").remove();
             } 
         });
-        
-        dom.removeCallScroll( this.name);
         
     }
     
@@ -459,8 +457,8 @@ class Message extends Component {
     render() {
         return `
        
-            <div class="overlay-popup"></div>
-            <div class="container-popup">
+            <div class="overlay-popup overlay-message"></div>
+            <div class="container-popup container-message">
                 <div class="box-message relative {{props.status}}">{{props.message}}</div>
             </div>
       `; 
