@@ -5,7 +5,7 @@
 
 
 
-<div class="candidat-item left ">
+<div class="candidat-item left {% if froloop.counter|divisibleby:'4' %}noLeft{% endif %}">
     
     <div class="video-candidat relative">
         {% if candidat.project.video %}
