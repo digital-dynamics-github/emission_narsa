@@ -47,7 +47,7 @@ body.arabic input[type="button"]+input[type="button"] {
     margin-left: 0;
 }
 
-body.arabicinput[type="checkbox"]+label:before {
+body.arabic input[type="checkbox"]+label:before {
     left: auto;
     right: 0;
 }
@@ -56,7 +56,8 @@ body.arabic input[type="checkbox"], body.arabic input[type="radio"] {
     left: auto;
 }
 
-body.arabic input[type="checkbox"] + label, body.arabic input[type="radio"] +  {
+body.arabic input[type="checkbox"] + label, body.arabic input[type="radio"] + label {
     margin-left: auto;
     margin-right: 45px;
 }
+
