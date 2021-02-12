@@ -28,8 +28,8 @@
         </div>
         <div class="right-header right">
             <ul class="horizontal">
-                <li><a href="/fr/{{request.get_path_page}}" class="fade-hover bleu-color">Français</a></li>
-                <li><a href="/ar/{{request.get_path_page}}" class="fade-hover bleu-color">العربية</a></li>
+                <li><a href="/fr/{{request.get_path_page}}" class="fade-hover bleu-color {% if LANGUAGE_CODE == 'fr' %}active{% endif %}">Français</a></li>
+                <li><a href="/ar/{{request.get_path_page}}" class="fade-hover bleu-color {% if LANGUAGE_CODE == 'ar' %}active{% endif %}">العربية</a></li>
             </ul>
             <div class="clr"></div>
         </div> 
