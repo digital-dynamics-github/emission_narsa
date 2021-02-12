@@ -74,6 +74,7 @@ class SaveStream(TemplateAPIViewCustom):
         stream.title = data["title_ar"]
         stream.description = data["description_ar"]
         stream.code = data["code"]
+        stream.code_ar = data["code_ar"]
         stream.uid = self.generateUID()
 
         streams_active = Stream.objects.all().filter(active=True)
@@ -107,6 +108,7 @@ class UpdateStream(TemplateAPIViewCustom):
             stream.title_ar = data["title_ar"]
             stream.description_ar = data["description_ar"]
             stream.code = data["code"]
+            stream.code_ar = data["code_ar"]
 
             streams_active = Stream.objects.all().filter(active=True)
             if streams_active.count() > 0:
@@ -352,6 +354,7 @@ class GetStream(TemplateAPIViewCustom):
                 "title_ar" : stream.title_ar,
                 "description_ar" : stream.description_ar,
                 "code" : stream.code,
+                "code_ar" : stream.code_ar,
             }
 
 

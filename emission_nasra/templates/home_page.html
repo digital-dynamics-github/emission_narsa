@@ -11,7 +11,12 @@
 <div class="container center-auto">
     <div id="block-stream" class="relative {% if stream_object %}stream-active{% endif %}">
         {% if stream_object %}
-            {{stream_object.code|safe}}
+            {% if LANGUAGE_CODE == "ar" %}
+                {{stream_object.code_ar|safe}}
+            {% else %}
+                {{stream_object.code|safe}}
+            {% endif %}
+            
         {% else %}
             <img src="{% static 'images/rect_live_stream.png' %}" alt="Tombola" />
         {% endif %}

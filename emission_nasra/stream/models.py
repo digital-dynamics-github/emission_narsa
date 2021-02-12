@@ -10,6 +10,7 @@ class Stream(models.Model):
     description = models.TextField(blank=True,default="")
     description_ar = models.TextField(blank=True,default="")
     code = models.TextField(blank=True,default="")
+    code_ar = models.TextField(blank=True,default="")
     photo = models.ImageField(upload_to="uploads/stream/stream", null=True, blank=True)
     active = models.BooleanField(blank=True, default=False)
 

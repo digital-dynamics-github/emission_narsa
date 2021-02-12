@@ -131,6 +131,7 @@ class InterfaceAdministrator extends Component {
                 "title_ar" : "",
                 "description_ar" : "",
                 "code" : "",
+                "code_ar" : "",
             }
             
             self.renderOtherComponent("PopupStream", props, parent, null);
@@ -358,6 +359,11 @@ class PopupStream extends Component {
                         <p>
                             <label>Code du Stream <span class="asterix">*</span></label>
                             <textarea name="code" data-rule="string" class="required" placeholder="Example : lorem ipsum">{{props.code}}</textarea>
+                        </p>
+
+                        <p>
+                            <label>Code <span class="bold">ARABE</span> du Stream <span class="asterix">*</span></label>
+                            <textarea name="code_ar" data-rule="string" class="required" placeholder="Example : lorem ipsum">{{props.code_ar}}</textarea>
                         </p>
                         
                         <p>
