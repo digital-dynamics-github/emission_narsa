@@ -270,7 +270,7 @@ class PopupPerson extends Component {
 
                         <p class="relative">
                             <input type="checkbox" name="accept_reglement" class="required" data-rule="boolean" />
-                            <label>j'accepte <a href="/reglements/" target="_blank" class="bleu-color souligner">les réglements du TOMBOLA</a></label>
+                            <label>j'accepte <a href="/fr/reglements/" target="_blank" class="bleu-color souligner">les réglements du TOMBOLA</a></label>
                             
                         </p>
                         
@@ -399,7 +399,7 @@ class PopupPersonAR extends Component {
 
                         <p class="relative">
                             <input type="checkbox" name="accept_reglement" class="required" data-rule="boolean" />
-                            <label>أوافق على <a href="/reglements/" target="_blank" class="bleu-color souligner">شروط المسابقة</a></label>
+                            <label>أوافق على <a href="/ar/reglements/" target="_blank" class="bleu-color souligner">شروط المسابقة</a></label>
                             
                         </p>
                         
