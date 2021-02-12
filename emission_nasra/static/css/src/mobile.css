@@ -110,6 +110,11 @@
         background-size: contain;
     }
     
+    /*
+    body.arabic #logo a {
+        background: url("../images/logo_mobile_ar.png") no-repeat center center;
+    }*/
+    
     
     #icon-menu {
         position: relative;

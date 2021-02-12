@@ -27,10 +27,18 @@
         <h1 class="light bleu-color align-center bottom40 relative">
             
             <div class="mobile">
-                <img src="{% static 'images/logo_initiative.png' %}" alt="Mon intiative pour la vie" class="logo-initiative-mobile" />
+                 {% if LANGUAGE_CODE == "ar" %}
+                <img src="{% static 'images/logo_initiative_ar.png' %}" alt="Mon intiative pour la vie" class="logo-initiative-mobile" />
+                {% else %}
+                    <img src="{% static 'images/logo_initiative.png' %}" alt="Mon intiative pour la vie" class="logo-initiative-mobile" />
+                {% endif %}
             </div>
             <span class="relative align-center">
-                <img src="{% static 'images/logo_initiative.png' %}" alt="Mon intiative pour la vie" class="logo-initiative absolute desktop" />
+                {% if LANGUAGE_CODE == "ar" %}
+                    <img src="{% static 'images/logo_initiative_ar.png' %}" alt="Mon intiative pour la vie" class="logo-initiative absolute desktop" />
+                {% else %}
+                    <img src="{% static 'images/logo_initiative.png' %}" alt="Mon intiative pour la vie" class="logo-initiative absolute desktop" />
+                {% endif %}
                 
                  {% if text_home %}
                     {% if LANGUAGE_CODE == "ar" %}
