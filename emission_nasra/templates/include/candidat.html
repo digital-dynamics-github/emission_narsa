@@ -5,7 +5,7 @@
 
 
 
-<div class="candidat-item left {% if forloop.counter|divisibleby:'4' %}noLeft{% endif %}">
+<div class="candidat-item left short {% if forloop.counter|divisibleby:'4' %}noLeft{% endif %}">
     
     <div class="video-candidat relative">
         {% if candidat.project.video %}
@@ -117,7 +117,7 @@
             {% if accept_vote %}
                 <div class="align-center top20 bottom15 relative">
                     <div class="id_vote-candidat">{{candidat.id_vote}}</div>
-                    <input type="button" value="Voter Pour {{candidat.first_name|capfirst}}" class="btn bleu-color bold yellow large vote-btn shadow" data-uid="{{candidat.uid}}" />
+                    <input type="button" value="Je Vote Pour {{candidat.first_name|capfirst}}" class="btn bleu-color bold yellow large vote-btn shadow" data-uid="{{candidat.uid}}" />
                 </div>
             {% endif %}
 

@@ -199,9 +199,18 @@ h2 {
     margin-bottom: 30px;
     height: 740px;
 }
+.candidat-item.short {
+    height: 600px;
+}
+.candidat-item.short .resume-content {
+    display: none;
+}
 
 .candidat-item .video-candidat iframe{
     max-width: 100%;
+}
+.candidat-item.short .profil-widget {
+    margin-top: 15px;
 }
 
 
