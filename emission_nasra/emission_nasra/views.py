@@ -126,7 +126,7 @@ class HomePage(TemplateView):
         if stream.count() == 1:
             stream_object = stream[0]
 
-        candidats = Candidat.objects.all().order_by("-id")
+        candidats = Candidat.objects.all().order_by("id")
 
         config_jauge = Config.objects.all().filter(type="jauge_candidat", active=True)
 
