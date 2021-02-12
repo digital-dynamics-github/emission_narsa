@@ -288,7 +288,7 @@ footer {
     max-width: 100%;
 }
 #block-stream.stream-active {
-    background: #000;
+    /*background: #000;*/
 }
 #block-stream.stream-active {
     text-align: center;
