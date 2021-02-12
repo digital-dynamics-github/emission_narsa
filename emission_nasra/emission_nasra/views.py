@@ -178,7 +178,7 @@ class CandidatsPage(TemplateView):
         if config_vote.count() > 0:
             accept_vote = True
 
-        candidats = Candidat.objects.all().order_by("-id")
+        candidats = Candidat.objects.all().order_by("id")
 
         config_jauge = Config.objects.all().filter(type="jauge_candidat", active=True)
 
