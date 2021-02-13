@@ -235,6 +235,13 @@ class PopupPerson extends Component {
                                }
                                self.renderOtherComponent("Message", { "message" : message_texte, "status" : response.status }, dom.get("#prepend-body"), null);
                            }
+                            else {
+                                var message_texte = response.message_fr;
+                               if ( lang === "ar" ) {
+                                   message_texte = response.message_ar;
+                               }
+                               self.renderOtherComponent("Message", { "message" : message_texte, "status" : response.status }, dom.get("#prepend-body"), null);
+                            }
                         });
                     }
                 },
@@ -369,6 +376,13 @@ class PopupPersonAR extends Component {
                                }
                                self.renderOtherComponent("Message", { "message" : message_texte, "status" : response.status }, dom.get("#prepend-body"), null);
                            }
+                            else {
+                                var message_texte = response.message_fr;
+                               if ( lang === "ar" ) {
+                                   message_texte = response.message_ar;
+                               }
+                               self.renderOtherComponent("Message", { "message" : message_texte, "status" : response.status }, dom.get("#prepend-body"), null);
+                            }
                         });
                     }
                 },
