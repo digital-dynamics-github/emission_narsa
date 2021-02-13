@@ -290,13 +290,13 @@ img.border {
 }
 .profil-widget .infos-profil {
     width: 315px;
-    font-size: 15px;
+    font-size: 18px;
     margin-left: 15px;
     margin-top: 5px;
 }
 
 .profil-widget .infos-profil .rouge-color {
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .jury-item {
@@ -424,6 +424,7 @@ switch
     height: 55px;
     margin-left: auto;
     margin-right: auto;
+    font-size: 18px;
 }
 
 .box-message {
