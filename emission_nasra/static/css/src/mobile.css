@@ -301,4 +301,7 @@
     .profil-widget .infos-profil {
         font-size: 14px;
     }
+    #block-text-home h1 {
+        line-height: 50px;
+    }
 }
