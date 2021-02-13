@@ -548,7 +548,7 @@ class PopupCandidat extends Component {
 
                         <p>
                             <label>Prénom du Candidat <span class="bold">en ARABE</span> <span class="asterix">*</span></label>
-                            <input type="text" name="last_name_ar" data-rule="string" class="required" placeholder="Example : mohamed"{{props.last_name_ar}} />
+                            <input type="text" name="last_name_ar" data-rule="string" class="required" placeholder="Example : mohamed" vale="{{props.last_name_ar}}" />
                         </p>
 
                        
