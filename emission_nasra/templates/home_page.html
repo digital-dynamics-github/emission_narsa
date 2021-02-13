@@ -151,6 +151,7 @@
                 
                 {% for candidat in candidats %}
                     {% if forloop.counter == 0 or forloop.counter|divisibleby:'2' %}
+                        <div class="clr"></div>
                         <div class="category-prohjet-block bleu-color align-center bold">
                             {% if LANGUAGE_CODE == "ar" %}
                                 {{candidat.project.category_ar}}
@@ -158,6 +159,7 @@
                                 {{candidat.project.category}}
                             {% endif %}
                         </div>
+                        <div class="clr"></div>
                     {% endif %}
                     {% include "include/candidat.html" %}   
                 {% endfor %}
