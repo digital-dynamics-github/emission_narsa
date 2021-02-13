@@ -150,19 +150,15 @@
             <div class="container center-auto">
                 
                 {% for candidat in candidats %}
-                    {% if forloop.counter == 1 or forloop.counter|divisibleby:'2' %}
-                        {% if forloop.counter > 2 %}
-                        <div class="clr"></div>
-                        <div class="category-projet-block bleu-color align-center bold">
-                            {% if LANGUAGE_CODE == "ar" %}
-                                {{candidat.project.category_ar}}
-                            {% else %}
-                                {{candidat.project.category}}
-                            {% endif %}
-                        </div>
-                        <div class="clr"></div>
+                    <div class="clr"></div>
+                    <div class="category-projet-block bleu-color align-center bold {% cycle 'none' '' %}">
+                        {% if LANGUAGE_CODE == "ar" %}
+                            {{candidat.project.category_ar}}
+                        {% else %}
+                            {{candidat.project.category}}
                         {% endif %}
-                    {% endif %}
+                    </div>
+                    <div class="clr"></div>
                     {% include "include/candidat.html" %}   
                 {% endfor %}
                 
