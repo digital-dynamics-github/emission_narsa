@@ -277,7 +277,7 @@ class GetCandidat(TemplateAPIViewCustom):
                 "title_project_ar" : candidat.project.title_ar,
                 "second_title_project_ar" : candidat.project.second_title_ar,
                 "content_project_ar" : candidat.project.content_ar,
-                "category_project_" : candidat.project.category,
+                "category_project" : candidat.project.category,
                 "category_project_ar" : candidat.project.category_ar,
                 "first_name" : candidat.first_name,
                 "last_name" : candidat.last_name,
