@@ -65,7 +65,10 @@ body.arabic .profil-widget .infos-profil {
     margin-right: 15px;
     margin-left: auto;
 }
-body.arabi .font20 {
+body.arabic .font20 {
     font-size: 22px;
     line-height: 38px;
+}
+body.arabic input[type="date"].error, body.arabic input[type="email"].error, body.arabic  input[type="number"].error, body.arabic input[type="password"].error, body.arabic input[type="tel"].error, body.arabic input[type="text"].error, body.arabic input[type="time"].error, body.arabic select.error, body.arabic textarea.error {
+    background: url(../images/icons/error.png) no-repeat 4% center #fff;
 }
