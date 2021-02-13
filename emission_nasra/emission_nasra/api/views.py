@@ -628,7 +628,7 @@ class SavePerson(TemplateAPIViewCustom):
         if config_demo.count() == 1:
             site_demo = True
 
-        if temp_person.count() > 0 and site_demo == False:
+        if temp_person.count() > 0: # and site_demo == False
 
             return Response({"status": status, "message_fr": message_fr, "message_ar": message_ar, "uid_ref": "",
                              "site_demo": site_demo}, content_type="application/json", status=200)

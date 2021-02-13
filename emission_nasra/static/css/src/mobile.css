@@ -305,4 +305,8 @@
     #block-text-home h1 {
         line-height: 50px;
     }
+    
+    .candidat-item h3 {
+        font-size: 18px;
+    }
 }
