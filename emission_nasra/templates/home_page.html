@@ -150,7 +150,6 @@
             <div class="container center-auto">
                 
                 {% for candidat in candidats %}
-                    <div class="clr"></div>
                     <div class="category-projet-block bleu-color align-center bold {% cycle '' 'none' %}">
                         {% if LANGUAGE_CODE == "ar" %}
                             {{candidat.project.category_ar}}
@@ -158,7 +157,6 @@
                             {{candidat.project.category}}
                         {% endif %}
                     </div>
-                    <div class="clr"></div>
                     {% include "include/candidat.html" %}   
                 {% endfor %}
                 

@@ -203,6 +203,7 @@ h2 {
     margin-bottom: 30px;
     font-size: 18px;
     box-shadow: 15px 15px 20px rgba(0,0,0,0.05);
+    clear: both;
 }
 .uppercase {
     text-transform: uppercase;
