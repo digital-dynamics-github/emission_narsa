@@ -150,7 +150,7 @@
             <div class="container center-auto">
                 
                 {% for candidat in candidats %}
-                    <div class="category-projet-block bleu-color align-center bold {% cycle '' 'none' %}">
+                    <div class="category-projet-block bleu-color lowercase align-center bold {% cycle '' 'none' %}">
                         {% if LANGUAGE_CODE == "ar" %}
                             {{candidat.project.category_ar}}
                         {% else %}

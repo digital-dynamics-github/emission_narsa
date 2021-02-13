@@ -70,8 +70,8 @@
     <div id="icon-menu" class="pointer hover-fade"></div>
     <div id="langaues-cont" class="">
         <ul class="horizontal">
-            <li><a href="/fr/{{request.get_path_page}}" class="fade-hover {% if LANGUAGE_CODE == 'fr' %}active{% endif %}" title="Version Français"><img src="{% static 'images/fr_flag.png' %}" alt="Fr" /></a></li>
-            <li><a href="/ar/{{request.get_path_page}}" class="fade-hover {% if LANGUAGE_CODE == 'ar' %}active{% endif %}" title="النسخة العربية"><img src="{% static 'images/ar_flag.png' %}" alt="Fr" /></a></li>
+            <li><a href="/fr/{{request.get_path_page}}" class="{% if LANGUAGE_CODE == 'fr' %}active{% endif %}" title="Version Français"><img src="{% static 'images/fr_flag.png' %}" alt="Fr" /></a></li>
+            <li><a href="/ar/{{request.get_path_page}}" class="{% if LANGUAGE_CODE == 'ar' %}active{% endif %}" title="النسخة العربية"><img src="{% static 'images/ar_flag.png' %}" alt="Fr" /></a></li>
         </ul>
         <div class="clr"></div>
     </div>
