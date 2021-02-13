@@ -196,7 +196,7 @@ h2 {
     position: relative;
     z-index: 900;
 }
-.category-prohjet-block {
+.category-projet-block {
     padding: 10px;
     background: #ffe800;
     border-radius: 10px;
@@ -246,11 +246,11 @@ body.arabic .candidat-item .resume-content {
     font-size: 12px;
     height: 140px;
 }
-.candidat-item + .candidat-item, .jury-item + .jury-item {
+.candidat-item + .candidat-item, .jury-item + .jury-item{
     margin-left: 30px;
 }
 
-.candidat-item.noLeft + .candidat-item {
+.candidat-item.noLeft + .candidat-item, .candidat-item.noLeft + .category-projet-block + .candidat-item {
     margin-left: 0px;
 }
 body.arabic .candidat-item.noLeft + .candidat-item {
