@@ -18,7 +18,11 @@
 <div class="container center-auto">
     <div id="block-stream" class="relative">
         {% if stream_object %}
-            {{stream_object|safe}}
+            {% if LANGUAGE_CODE == "ar" %}
+                {{stream_object.code_ar|safe}}
+            {% else %}
+                {{stream_object.code|safe}}
+            {% endif %}
         {% else %}
             <img src="{% static 'images/rect_live_stream.png' %}" alt="Tombola" />
         {% endif %}
@@ -50,7 +54,9 @@
             
             </div><!-- container -->
             
-            <div class="align-center top"></div>
+            <div class="align-center top30">
+                <img src="/static/images/visuel-vote-tombola-{{LANGUAGE_CODE}}}.png" alt="TOMBOLA NARSA" />
+            </div>
         </div><!-- listing-candidats -->
         
         
