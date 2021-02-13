@@ -35,7 +35,7 @@
         display: inline-block;
     }
     
-    .container, .min-container {
+    .container, .min-container, #listing-candidats .container {
         width: 90%;
     }
     
@@ -272,6 +272,10 @@
     
     body.arabic .resume-content {
         line-height: 30px;
+    }
+    
+    #block-text-home {
+        width: 100%;
     }
     
 }
