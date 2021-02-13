@@ -482,7 +482,6 @@ class PopupCandidat extends Component {
     
     
     render() {
-        console.log(this.props);
         return `
        
             <div class="overlay-popup"></div>
