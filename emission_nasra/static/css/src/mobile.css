@@ -274,8 +274,9 @@
         line-height: 30px;
     }
     
-    #block-text-home {
+    #block-text-home, .box-message {
         width: 100%;
+        box-sizing: border-box;
     }
     
     .profil-widget .photo-profil {
