@@ -5,7 +5,8 @@
 
 
 
-<div class="candidat-item left short {% if forloop.counter|divisibleby:'2' %}noLeft{% endif %}">
+<div class="candidat-item left short">
+    {% comment %}{% if forloop.counter|divisibleby:'2' %}noLeft{% endif %}{% endcomment %}
     
     <div class="video-candidat relative">
         {% if candidat.project.video %}
