@@ -278,4 +278,13 @@
         width: 100%;
     }
     
+    .profil-widget .infos-profil {
+        width: 205px;
+    }
+    
+    body.arabic .candidat-item + .candidat-item, body.arabic .candidat-item + .category-projet-block.none + .candidat-item, body.arabic .jury-item + .jury-item, .candidat-item + .category-projet-block.none + .candidat-item {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
 }
