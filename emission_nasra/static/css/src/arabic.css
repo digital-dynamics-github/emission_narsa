@@ -65,3 +65,7 @@ body.arabic .profil-widget .infos-profil {
     margin-right: 15px;
     margin-left: auto;
 }
+body.arabi .font20 {
+    font-size: 22px;
+    line-height: 38px;
+}
