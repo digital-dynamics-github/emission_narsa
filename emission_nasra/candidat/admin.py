@@ -14,7 +14,7 @@ admin.site.register(Candidat, CandidatAdmin)
 
 
 class ProjectAdmin(admin.ModelAdmin):
-   list_display   = ('title', 'content', 'uid')
+   list_display   = ('title', 'content', 'category', "category_ar", 'uid')
 
 
 
