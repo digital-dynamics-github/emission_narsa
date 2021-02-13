@@ -278,6 +278,12 @@
         width: 100%;
     }
     
+    .profil-widget .photo-profil {
+        width: 62px;
+    }
+    .profil-widget .photo-profil img {
+        max-width: 100%;
+    }
     .profil-widget .infos-profil {
         width: 205px;
     }
