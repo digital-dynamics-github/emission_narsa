@@ -650,7 +650,7 @@ class SavePerson(TemplateAPIViewCustom):
             person = Person()
             person.name = data["name"]
             person.email = data["email"]
-            person.phone = data["phone"]
+            person.phone = str(data["phone"])
             person.uid = self.generateUID()
             person.uid_ref = uid_ref
             person.accept_reglement = True

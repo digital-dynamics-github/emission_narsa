@@ -276,7 +276,7 @@ class PopupPerson extends Component {
 
                         <p>
                             <label>Numéro du téléphone <span class="asterix">*</span></label>
-                            <input type="text" name="phone" placeholder="Example : 0666666666" class="required" data-rule="string" />
+                            <input type="text" name="phone" placeholder="Example : 0666666666" class="required" data-rule="number" />
                         </p>
 
                         <p class="relative">
