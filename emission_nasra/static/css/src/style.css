@@ -160,6 +160,7 @@ h1 .line-active {
 }
 
 #block-text-home {
+    width: 960px;
     margin-top: 100px;
 }
 .logo-initiative {
@@ -184,15 +185,30 @@ h2 {
 #listing-candidats {
     margin-top: 30px;
     padding-top: 30px;
-    background: url("../images/background_block.png") no-repeat center center;
+    /*background: url("../images/background_block.png") no-repeat center center;*/
+    background: #eef1f8;
 }
 
+#listing-candidats .container {
+    width: 960px;
+}
 #prepend-body {
     position: relative;
     z-index: 900;
 }
+.category-prohjet-block {
+    padding: 10px;
+    background: #ffe800;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    box-shadow: 15px 15px 20px rgba(0,0,0,0.05);
+}
+.uppercase {
+    text-transform: uppercase;
+}
 .candidat-item {
-    width: 275px;
+    width: 462px;
     background: #fff;
     border: rgba(0,0,0,0.1) solid 1px;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
@@ -200,7 +216,7 @@ h2 {
     height: 740px;
 }
 .candidat-item.short {
-    height: 590px;
+    height: 600px;
 }
 .candidat-item.short .resume-content {
     display: none;
@@ -222,7 +238,7 @@ body.arabic .candidat-item .resume-content {
 }
 
 .candidat-item h3 {
-    font-size: 15px;
+    font-size: 18px;
     line-height: 20px;
     height: 40px;
 }
@@ -258,11 +274,11 @@ img.border {
 }
 
 .profil-widget .photo-profil {
-    width: 45px;
+    width: 82px;
 }
 .profil-widget .infos-profil {
-    width: 185px;
-    font-size: 11px;
+    width: 315px;
+    font-size: 15px;
     margin-left: 15px;
     margin-top: 5px;
 }
@@ -303,22 +319,25 @@ footer {
     text-align: center;
 }
 .id_vote-candidat {
-    padding: 5px;
+    padding: 10px;
     background: #ffe800;
     color: #3d61ad;
     font-weight: bold;
     border-radius: 100%;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     text-align: center;
-    font-size: 16px;
+    font-size: 22px;
     line-height: 21px;
     position: absolute;
     right: 5px;
     box-shadow: 2px 2px 2px rgba(0,0,0,.25);
-    top: -19px;
+    top: 0px;
+    box-sizing: border-box;
 }
-
+.gris-color {
+    color: rgba(0,0,0,0.3);
+}
 .inline-block .id_vote-candidat {
     right: -13px;
 }
@@ -383,6 +402,7 @@ switch
 .candidat-item .vote-btn {
     display: block;
     width: 90%;
+    height: 55px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -500,7 +520,12 @@ body.arabic .content-page li+li {
     margin-bottom: 5px;
 }
 
+/*
+*/
 
+.font26 {
+    font-size: 26px;
+}
 /*
 footer
 */

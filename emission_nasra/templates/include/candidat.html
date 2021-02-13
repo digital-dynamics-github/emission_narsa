@@ -5,7 +5,7 @@
 
 
 
-<div class="candidat-item left short {% if forloop.counter|divisibleby:'4' %}noLeft{% endif %}">
+<div class="candidat-item left short {% if forloop.counter|divisibleby:'2' %}noLeft{% endif %}">
     
     <div class="video-candidat relative">
         {% if candidat.project.video %}
@@ -19,12 +19,9 @@
     {% if LANGUAGE_CODE == "ar" %}
         <div class="box15">
             
-            {% if candidat.project.category_ar %}
-                <div><span class="label-category">{{candidat.project.category_ar}}</span></div>
-                
-            {% endif %}
+           
             
-            <h3 class="bold bleu-color bottom15">{{candidat.project.title_ar}}</h3>
+            <h3 class="bold bleu-color bottom10">{{candidat.project.title_ar}}</h3>
             
             {% if display_jauge_candidat and candidat.pourcent_votes < 99 and candidat.pourcent_votes > 0 %}
                 <div class="jauge-candidat relative">
@@ -47,14 +44,15 @@
                 <ul class="horizontal">
                     <li class="photo-profil">
                         {% if candidat.photo %}
-                            <img class="radius border" src="/media/{% thumbnail candidat.photo 43x43 crop %}" alt="{{candidat.first_name_ar}} {{candidat.last_name_ar}}" />
+                            <img class="radius border" src="/media/{% thumbnail candidat.photo 80x80 crop %}" alt="{{candidat.first_name_ar}} {{candidat.last_name_ar}}" />
                         {% else %}
                             <img class="radius border" src="{% static 'images/photo_profil_candidat.png' %}" alt="" />
                         {% endif %}
                      </li>  
-                    <li class="infos-profil bleu-color bold italic relative">
-                        <span class="block">{{candidat.first_name_ar}} {{candidat.last_name_ar}}</span>
-                        <span class="block">{{candidat.position_ar}} {{candidat.company_ar}}</span>
+                    <li class="infos-profil bleu-color  relative">
+                        <div class="id_vote-candidat">{{candidat.id_vote}}</div>
+                        <span class="block uppercase bold">{{candidat.first_name_ar}} {{candidat.last_name_ar}}</span>
+                        <span class="block gris-color">{{candidat.position_ar}} {{candidat.company_ar}}</span>
                     </li>
                 </ul>
 
@@ -63,7 +61,6 @@
             </div><!-- profil-widget --->
             {% if accept_vote %}
                 <div class="align-center top20 bottom15 relative">
-                    <div class="id_vote-candidat">{{candidat.id_vote}}</div>
                    <input type="button" value="صوت ل{{candidat.first_name_ar|capfirst}}" class="btn bleu-color bold yellow large vote-btn shadow" data-uid="{{candidat.uid}}" />
                 </div>
             {% endif %}
@@ -71,11 +68,7 @@
     
     {% else %}
         <div class="box15">
-            {% if candidat.project.category %}
-                <div><span class="label-category">{{candidat.project.category}}</span></div>
-                
-            {% endif %}
-            <h3 class="bold bleu-color bottom15">{{candidat.project.title}}</h3>
+            <h3 class="bold bleu-color bottom10">{{candidat.project.title}}</h3>
             
             {% if display_jauge_candidat and candidat.pourcent_votes < 99 and candidat.pourcent_votes > 0 %}
                 <div class="jauge-candidat relative">
@@ -98,15 +91,15 @@
                 <ul class="horizontal">
                     <li class="photo-profil">
                         {% if candidat.photo %}
-                            <img class="radius border" src="/media/{% thumbnail candidat.photo 43x43 crop %}" alt="{{candidat.first_name}} {{candidat.last_name}}" />
+                            <img class="radius border" src="/media/{% thumbnail candidat.photo 80x80 crop %}" alt="{{candidat.first_name}} {{candidat.last_name}}" />
                         {% else %}
                             <img class="radius border" src="{% static 'images/photo_profil_candidat.png' %}" alt="" />
                         {% endif %}
                      </li>  
-                    <li class="infos-profil bleu-color bold italic relative">
-                        
-                        <span class="block">{{candidat.first_name}} {{candidat.last_name}}</span>
-                        <span class="block">{{candidat.position}} {{candidat.company}}</span>
+                    <li class="infos-profil bleu-color  relative">
+                        <div class="id_vote-candidat">{{candidat.id_vote}}</div>
+                        <span class="block uppercase bold">{{candidat.first_name}} {{candidat.last_name}}</span>
+                        <span class="block gris-color">{{candidat.position}} {{candidat.company}}</span>
                     </li>
                 </ul>
 
@@ -116,7 +109,7 @@
             
             {% if accept_vote %}
                 <div class="align-center top20 bottom15 relative">
-                    <div class="id_vote-candidat">{{candidat.id_vote}}</div>
+                    
                     <input type="button" value="Je Vote Pour {{candidat.first_name|capfirst}}" class="btn bleu-color bold yellow large vote-btn shadow" data-uid="{{candidat.uid}}" />
                 </div>
             {% endif %}

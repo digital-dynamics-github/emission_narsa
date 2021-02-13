@@ -23,8 +23,8 @@
     
     </div><!-- block stream -->
     
-    <div id="block-text-home" class="relative">
-        <h1 class="light bleu-color align-center bottom40 relative">
+    <div id="block-text-home" class="relative center-auto">
+        <h1 class="bold bleu-color bottom40 relative">
             
             <div class="mobile">
                  {% if LANGUAGE_CODE == "ar" %}
@@ -148,6 +148,15 @@
             
             
             <div class="container center-auto">
+                {% if forloop.counter == 0 or forloop.counter|divisibleby:'2' %}
+                <div class="category-prohjet-block bleu-color align-center bold">
+                    {% if LANGUAGE_CODE == "ar" %}
+                        {{candidat.project.category_ar}}
+                    {% else %}
+                        {{candidat.project.category}}
+                    {% endif %}
+                </div>
+                {% endif %}
                 {% for candidat in candidats %}
                     {% include "include/candidat.html" %}   
                 {% endfor %}

@@ -17,6 +17,7 @@ class Project(models.Model):
     video = models.TextField(blank=True, default="")
     category = models.CharField(max_length=200, blank=True, default="")
     category_ar = models.CharField(max_length=200, blank=True, default="")
+    id_category = models.IntegerField(blank=True, default="0")
 
     date = models.DateField(auto_now=True)
     date_created = models.DateField(auto_now_add=True)

@@ -2,7 +2,7 @@
 {% get_current_language as LANGUAGE_CODE %}
 
 
-<div class="jury-item left">
+<div class="jury-item left align-center">
     <div class="photo-jury align-center">
         
         {% if jury.photo %}
@@ -13,20 +13,24 @@
     
     
     {% if LANGUAGE_CODE == "ar" %}
-        {% if jury.company_ar %}
-            <div class="align-center"><span class="label-category">{{jury.company_ar}}</span></div>
+        {% comment %}
+            {% if jury.company_ar %}
+                <div class="align-center"><span class="label-category">{{jury.company_ar}}</span></div>
 
-        {% endif %}
+            {% endif %}
+        {% endcomment %}
         <h3 class="bleu-color align-center">{{jury.first_name_ar}} {{jury.last_name_ar}}</h3>
     
     <p class="black-color bold center-auto">
         {{jury.position_ar}}, {{jury.company_ar}}
     </p>
     {% else %}
-        {% if jury.company %}
-            <div class="align-center"><span class="label-category">{{jury.company}}</span></div>
+        {% comment %}
+            {% if jury.company %}
+                <div class="align-center"><span class="label-category">{{jury.company}}</span></div>
 
-        {% endif %}
+            {% endif %}
+        {% endcomment %}
         <h3 class="bleu-color align-center">{{jury.first_name}} {{jury.last_name}}</h3>
     
         <p class="black-color bold center-auto">
