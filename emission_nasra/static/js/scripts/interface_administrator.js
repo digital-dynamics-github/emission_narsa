@@ -482,6 +482,7 @@ class PopupCandidat extends Component {
     
     
     render() {
+        console.log(this.props);
         return `
        
             <div class="overlay-popup"></div>
@@ -498,10 +499,7 @@ class PopupCandidat extends Component {
                             <label>Catégorie du projet </label>
                             <input type="text" name="category_project" placeholder="Example : Stream page home" class="" data-rule="string" value="{{props.category_project}}" />
                         </p>
-                        <p class="none">
-                            <label>Second Titre du projet <span class="asterix">*</span></label>
-                            <input type="text" name="second_title_project" placeholder="Example : Stream page home" class="" data-rule="string" value="{{props.second_title_project}}" />
-                        </p>
+                       
                         <p>
                             <label>Contenu du projet  <span class="asterix">*</span></label>
                             <textarea name="content_project" class="required" data-rule="string" placeholder="Example : lorem ipsum">{{props.content_project}}</textarea>
@@ -510,10 +508,7 @@ class PopupCandidat extends Component {
                             <label>Titre du projet  <span class="bold">en ARABE</span> <span class="asterix">*</span></label>
                             <input type="text" name="title_project_ar" placeholder="Example : Stream page home" class="required" data-rule="string" value="{{props.title_project_ar}}" />
                         </p>
-                        <p class="none">
-                            <label>Second Titre du projet  <span class="bold">en ARABE</span> <span class="asterix">*</span></label>
-                            <input type="text" name="second_title_project_ar" placeholder="Example : Stream page home" class="required" data-rule="string" value="{{props.second_title_project_ar}}" />
-                        </p>
+                         
                         <p>
                             <label>Contenu du projet  <span class="bold">en ARABE</span> <span class="asterix">*</span></label>
                             <textarea name="content_project_ar" class="required" data-rule="string" placeholder="Example : lorem ipsum">{{props.content_project_ar}}</textarea>
@@ -541,9 +536,38 @@ class PopupCandidat extends Component {
                             <label>Prénom du Candidat <span class="asterix">*</span></label>
                             <input type="text" name="last_name" data-rule="string" class="required" placeholder="Example : mohamed" value="{{props.last_name}}" />
                         </p>
-                        
-                        
+                         <p>
+                            <label>Position du Candidat </label>
+                            <input type="text" name="position" data-rule="string" class="" placeholder="Example : lorem ipsum" value="{{props.position}}" />
+                        </p>
 
+                         <p>
+                            <label>Nom du Candidat <span class="bold">en ARABE</span> <span class="asterix">*</span></label>
+                            <input type="text" name="first_name_ar" data-rule="string" class="required" placeholder="Example : mohamed" value="{{props.first_name_ar}}" />
+                        </p>
+
+                        <p>
+                            <label>Prénom du Candidat <span class="bold">en ARABE</span> <span class="asterix">*</span></label>
+                            <input type="text" name="last_name_ar" data-rule="string" class="required" placeholder="Example : mohamed"{{props.last_name_ar}} />
+                        </p>
+
+                       
+
+                        <p>
+                            <label>Position du Candidat <span class="bold">en ARABE</span></label>
+                            <input type="text" name="position_ar" data-rule="string" class="" placeholder="Example : example@example.com" value="{{props.position_ar}}" />
+                        </p>
+
+                        
+                        
+                        <p class="none">
+                            <label>Second Titre du projet <span class="asterix">*</span></label>
+                            <input type="text" name="second_title_project" placeholder="Example : Stream page home" class="" data-rule="string" value="{{props.second_title_project}}" />
+                        </p>
+                        <p class="none">
+                            <label>Second Titre du projet  <span class="bold">en ARABE</span> <span class="asterix">*</span></label>
+                            <input type="text" name="second_title_project_ar" placeholder="Example : Stream page home" class="required" data-rule="string" value="{{props.second_title_project_ar}}" />
+                        </p>
                         <p class="none">
                             <label>Email du Candidat <span class="asterix">*</span></label>
                             <input type="text" name="email" data-rule="" class="" placeholder="Example : example@example.com" value="{{props.email}}" />
@@ -564,21 +588,7 @@ class PopupCandidat extends Component {
                             <input type="text" name="twitter" data-rule="string" class="" placeholder="Example : example@example.com" value="{{props.twitter}}" />
                         </p>
 
-                        <p>
-                            <label>Nom du Candidat <span class="bold">en ARABE</span> <span class="asterix">*</span></label>
-                            <input type="text" name="first_name_ar" data-rule="string" class="required" placeholder="Example : mohamed" value="{{props.first_name_ar}}" />
-                        </p>
-
-                        <p>
-                            <label>Prénom du Candidat <span class="bold">en ARABE</span> <span class="asterix">*</span></label>
-                            <input type="text" name="last_name_ar" data-rule="string" class="required" placeholder="Example : mohamed"{{props.last_name_ar}} />
-                        </p>
-
-                        <p>
-                            <label>Position du Candidat </label>
-                            <input type="text" name="position" data-rule="string" class="" placeholder="Example : lorem ipsum" value="{{props.position}}" />
-                        </p>
-
+                       
                         <p class="none">
                             <label>Entreprise du Candidat </label>
                             <input type="text" name="company" data-rule="string" class="" placeholder="Example : example@example.com" value="{{props.company}}" />
@@ -589,10 +599,7 @@ class PopupCandidat extends Component {
                             <textarea type="text" name="about" data-rule="string" class="" placeholder="Example : example@example.com" >{{props.about}}</textarea>
                         </p>
 
-                        <p>
-                            <label>Position du Candidat <span class="bold">en ARABE</span></label>
-                            <input type="text" name="position_ar" data-rule="string" class="" placeholder="Example : example@example.com" value="{{props.position_ar}}" />
-                        </p>
+                        
 
                         <p class="none">
                             <label>Entreprise du Candidat <span class="bold">en ARABE</span></label>

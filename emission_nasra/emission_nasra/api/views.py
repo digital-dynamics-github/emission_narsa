@@ -623,8 +623,6 @@ class SavePerson(TemplateAPIViewCustom):
 
         temp_person = Person.objects.all().filter(email=data["email"])
 
-        print(temp_person)
-        print("-----------")
 
         config_demo = Config.objects.all().filter(type="demo", active=True)
         site_demo = False
