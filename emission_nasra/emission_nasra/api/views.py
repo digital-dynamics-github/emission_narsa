@@ -156,6 +156,7 @@ class SaveBlockText(TemplateAPIViewCustom):
 
         element = BlockText()
         element.title = data["title"]
+        element.uid = self.generateUID()
         element.description = data["description"]
         element.title_ar = data["title_ar"]
         element.description_ar = data["description_ar"]
@@ -248,7 +249,7 @@ class GetBlockText(TemplateAPIViewCustom):
         block_text = BlockText.objects.all().filter(uid=uid)
         if block_text.count() == 1:
             block_text = block_text[0]
-            data = { "title" : block_text.title, "description" : block_text.description, 'title_ar' : block_text.title_ar, "description_ar" : block_text.description_ar, "location" : block_text.location }
+            data = { "title" : block_text.title, "description" : block_text.description, 'title_ar' : block_text.title_ar, "description_ar" : block_text.description_ar, "location" : block_text.location, "uid" : block_text.uid }
 
 
 
@@ -614,10 +615,23 @@ class SavePerson(TemplateAPIViewCustom):
     limit_per_page = 10
 
     def post(self, request):
-        message = "merci pour votre vote"
+        message_fr = "Merci pour votre vote Bonne chance pour la tombola RDV le 18 février 2021 sur 2M"
+        message_ar = "شكرا لتصويتكم حظ موفق موعدنا يوم 18 فبراير 2021 على قناة 2M  "
         status = "success"
 
         data = request.data
+
+        temp_person = Person.objects.all().filter(email=data["email"])
+
+        config_demo = Config.objects.all().filter(type="demo", active=True)
+        site_demo = False
+        if config_demo.count() == 1:
+            site_demo = True
+
+        if temp_person.count() > 0 and site_demo == False:
+
+            return Response({"status": status, "message_fr": message_fr, "message_ar": message_ar, "uid_ref": "",
+                             "site_demo": site_demo}, content_type="application/json", status=200)
 
         uid_ref = None
         candidat = Candidat.objects.all().filter(uid=data["candidat"])
@@ -625,10 +639,7 @@ class SavePerson(TemplateAPIViewCustom):
         if candidat.count() == 1 and config_vote.count() > 0:
             candidat = candidat[0]
 
-            config_demo = Config.objects.all().filter(type="demo", active=True)
-            site_demo = False
-            if config_demo.count() == 1:
-                site_demo = True
+
 
 
             uid_ref = self.generateUID() + "-" + self.generateUID()
@@ -657,7 +668,7 @@ class SavePerson(TemplateAPIViewCustom):
             message = "Candidat n'existe plus, Merci de réessayer plus tard"
 
 
-        return Response({ "status" : status, "message" : message, "uid_ref" : uid_ref, "site_demo" : site_demo}, content_type="application/json", status=200)
+        return Response({ "status" : status, "message_fr" : message_fr, "message_ar" : message_ar, "uid_ref" : uid_ref, "site_demo" : site_demo}, content_type="application/json", status=200)
 
 class DeleteElement(TemplateAPIViewCustom):
     permission_classes = (AllowAny,)

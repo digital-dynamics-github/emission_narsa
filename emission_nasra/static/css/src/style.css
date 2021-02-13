@@ -111,6 +111,17 @@ h1 {
 .min-container {
     width: 800px;
 }
+
+.rouge {
+    background: #e11221;
+}
+.rouge-color {
+    color: #e11221;
+}
+
+.gris-bg {
+    background: #e0e0e0;
+}
 /*
 HEADER
 */
@@ -217,7 +228,7 @@ h2 {
     height: 740px;
 }
 .candidat-item.short {
-    height: 600px;
+    height: 620px;
 }
 .candidat-item.short .resume-content {
     display: none;
@@ -239,9 +250,9 @@ body.arabic .candidat-item .resume-content {
 }
 
 .candidat-item h3 {
-    font-size: 18px;
-    line-height: 20px;
-    height: 40px;
+    font-size: 22px;
+    line-height: 27px;
+    height: 50px;
 }
 .candidat-item .resume-content {
     font-size: 12px;
@@ -284,6 +295,10 @@ img.border {
     margin-top: 5px;
 }
 
+.profil-widget .infos-profil .rouge-color {
+    font-size: 18px;
+}
+
 .jury-item {
     width: 277px;
 }
@@ -321,8 +336,11 @@ footer {
 }
 .id_vote-candidat {
     padding: 10px;
-    background: #ffe800;
-    color: #3d61ad;
+    /*background: #ffe800;
+    color: #3d61ad;*/
+    
+    background: #e0e0e0;
+    color: #e11221;
     font-weight: bold;
     border-radius: 100%;
     width: 40px;
@@ -409,7 +427,7 @@ switch
 }
 
 .box-message {
-    width: 500px;
+    width: 800px;
     padding: 10px 20px;
     color: #fff;
     text-align: center;
@@ -418,13 +436,15 @@ switch
 }
 
 .box-message.success {
-    background: #94f856;
-    border: #5fc021 solid 1px;
+    background: #d6f5c2;
+    border: #5abf19 solid 1px;
+    color: #64c626;
 }
 
 .box-message.error {
-    background: #fa9494;
-    border: #dd2727 solid 1px;
+    background: #f6c6c6;
+    border: #cc1e1e solid 1px;
+    color: #cc1e1e;
 }
 
 .video-candidat-block {
@@ -459,7 +479,8 @@ body.arabic .content-candidat-block .horizontal li+li {
     height: 5px;
     top: 0;
     left: 0;
-    background: #3d61ad;
+    /*background: #3d61ad;*/
+    background: #e11221;
 }
 
 .jauge-value {

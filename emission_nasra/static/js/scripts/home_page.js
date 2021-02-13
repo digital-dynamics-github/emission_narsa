@@ -229,7 +229,11 @@ class PopupPerson extends Component {
                            if ( response.status === "success" ) {
                                var uid_ref = response.uid_ref;
                                self.saveUidRef(response.uid_ref, response.site_demo);
-                               self.renderOtherComponent("Message", { "message" : response.message, "status" : response.status }, dom.get("#prepend-body"), null);
+                               var message_texte = response.message_fr;
+                               if ( lang === "ar" ) {
+                                   message_texte = response.message_ar;
+                               }
+                               self.renderOtherComponent("Message", { "message" : message_texte, "status" : response.status }, dom.get("#prepend-body"), null);
                            }
                         });
                     }
@@ -358,7 +362,12 @@ class PopupPersonAR extends Component {
                            if ( response.status === "success" ) {
                                var uid_ref = response.uid_ref;
                                self.saveUidRef(response.uid_ref, response.site_demo);
-                               self.renderOtherComponent("Message", { "message" : response.message, "status" : response.status }, dom.get("#prepend-body"), null);
+                               
+                               var message_texte = response.message_fr;
+                               if ( lang === "ar" ) {
+                                   message_texte = response.message_ar;
+                               }
+                               self.renderOtherComponent("Message", { "message" : message_texte, "status" : response.status }, dom.get("#prepend-body"), null);
                            }
                         });
                     }
