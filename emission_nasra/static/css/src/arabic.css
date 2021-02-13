@@ -22,7 +22,7 @@ body.arabic header .horizontal li + li {
     margin-left: 0;
 }
 
-body.arabic .candidat-item + .candidat-item, body.arabic .jury-item + .jury-item {
+body.arabic .candidat-item + .candidat-item, body.arabic .jury-item + .jury-item, body.arabic .candidat-item+.category-projet-block.none + .candidat-item {
     margin-left: auto;
     margin-right: 30px;
 }
