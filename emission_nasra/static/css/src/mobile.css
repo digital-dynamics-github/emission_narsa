@@ -309,4 +309,9 @@
     .candidat-item h3 {
         font-size: 18px;
     }
+    
+    .profil-widget .infos-profil .gris-color {
+        width: 160px;
+        line-height: 15px;
+    }
 }
