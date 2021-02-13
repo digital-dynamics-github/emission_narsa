@@ -247,7 +247,7 @@ body.arabic .candidat-item .resume-content {
     font-size: 12px;
     height: 140px;
 }
-.candidat-item + .candidat-item, .jury-item + .jury-item{
+.candidat-item + .candidat-item, .jury-item + .jury-item, .canidat-item+.category-projet-block.none .canidat-item {
     margin-left: 30px;
 }
 
