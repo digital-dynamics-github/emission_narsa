@@ -314,4 +314,8 @@
         width: 160px;
         line-height: 15px;
     }
+    
+    .candidat-block h2 {
+        font-size: 26px;
+    }
 }
