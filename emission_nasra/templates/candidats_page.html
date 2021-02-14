@@ -5,9 +5,9 @@
 
 {% block title %}
 {% if LANGUAGE_CODE == "ar" %}
-    المرشحين لبرنامج NARSA
+    نبذة عن المبادرات
 {% else %}
-    Candidats de l’émission NARSA
+    Aperçu des initiatives
 {% endif %}
 
 {% endblock %}
@@ -36,10 +36,10 @@
     <div id="block-candidat" class="relative">
         <h2 class="bleu-color align-center">
             {% if LANGUAGE_CODE == "ar" %}
-                المرشحون لبرنامج
-                &nbsp;<img src="{% static 'images/img_titre_ar.png' %}" alt="NARSA" />
+                نبذة عن المبادرات
+               
             {% else %}
-                Candidats de l’émission &nbsp;<img src="{% static 'images/img_titre.png' %}" alt="NARSA" />
+                Aperçu des initiatives
             {% endif %}
             
              </h2>
