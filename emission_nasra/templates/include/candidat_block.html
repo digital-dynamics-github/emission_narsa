@@ -53,7 +53,8 @@
                     <li class="infos-profil bleu-color bold italic relative">
                         
                         <span class="block">{{candidat.first_name_ar}} {{candidat.last_name_ar}}</span>
-                        <span class="block">{{candidat.position_ar}} {{candidat.company_ar}}</span>
+                        <span class="block">{{candidat.position_ar}}</span>
+                        <span class="block">{{candidat.company_ar|safe}} </span>
                     </li>
                 </ul>
 
@@ -102,7 +103,8 @@
                      </li>  
                     <li class="infos-profil bleu-color bold italic relative">
                         <span class="block">{{candidat.first_name}} {{candidat.last_name}}</span>
-                        <span class="block">{{candidat.position}} {{candidat.company}}</span>
+                        <span class="block">{{candidat.position}} </span>
+                        <span class="block">{{candidat.company|safe}} </span>
                     </li>
                 </ul>
 
