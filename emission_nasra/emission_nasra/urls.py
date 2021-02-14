@@ -57,7 +57,7 @@ urlpatterns += i18n_patterns(
     path('contact/', views.ContactPage.as_view(), name="contact_page"),
     path('merci/', views.MerciPage.as_view(), name="merci_page"),
 
-    path('vote/', views.CandidatsPage.as_view(), name="candidats_page"),
+    path('initiative/', views.CandidatsPage.as_view(), name="candidats_page"),
 
     path('details-candidat/<str:uid>/', views.DetailsCandidat.as_view(), name="details_candidat"),
 )

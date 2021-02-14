@@ -588,25 +588,25 @@ class PopupCandidat extends Component {
                         </p>
 
                        
-                        <p class="none">
-                            <label>Entreprise du Candidat </label>
+                        <p class="">
+                            <label>Organisation du Candidat </label>
                             <input type="text" name="company" data-rule="string" class="" placeholder="Example : example@example.com" value="{{props.company}}" />
                         </p>
 
-                        <p class="none">
-                            <label>A propos du Candidat </label>
+                        <p class="">
+                            <label>Description du Candidat </label>
                             <textarea type="text" name="about" data-rule="string" class="" placeholder="Example : example@example.com" >{{props.about}}</textarea>
                         </p>
 
                         
 
-                        <p class="none">
-                            <label>Entreprise du Candidat <span class="bold">en ARABE</span></label>
+                        <p class="">
+                            <label>Organisation du Candidat <span class="bold">en ARABE</span></label>
                             <input type="text" name="company_ar" data-rule="string" class="" placeholder="Example : example@example.com" value="{{props.company_ar}}" />
                         </p>
 
-                        <p class="none">
-                            <label>A propos du Candidat <span class="bold">en ARABE</span> </label>
+                        <p class="">
+                            <label>Description du Candidat <span class="bold">en ARABE</span> </label>
                             <textarea type="text" name="about_ar" data-rule="string" class="" placeholder="Example : example@example.com" >{{props.about_ar}}</textarea>
                         </p>
 
