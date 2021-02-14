@@ -477,7 +477,7 @@ body.arabic .content-candidat-block .horizontal li+li {
 }
 
 .candidat-block + .candidat-block, .jury-block+.jury-block {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .jauge-candidat {
@@ -544,7 +544,7 @@ body.arabic .content-page li+li {
 
 .label-category {
     display: inline-block;
-    padding: 7px10px;
+    padding: 7px 10px;
     border-radius: 20px;
     background: #3d61ad;
     color: #fff;
