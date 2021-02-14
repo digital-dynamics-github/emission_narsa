@@ -54,7 +54,7 @@
                         <div class="id_vote-candidat">{{candidat.id_vote}}</div>
                         <span class="block uppercase bold rouge-color">{{candidat.first_name_ar}} {{candidat.last_name_ar}}</span>
                         <span class="block gris-color">{{candidat.position_ar}} </span>
-                        <span class="block gris-color">{{candidat.company_ar}}</span>
+                        <span class="block gris-color">{{candidat.company_ar|safe}}</span>
                     </li>
                 </ul>
 
@@ -102,7 +102,7 @@
                         <div class="id_vote-candidat">{{candidat.id_vote}}</div>
                         <span class="block uppercase bold rouge-color">{{candidat.first_name}} {{candidat.last_name}}</span>
                         <span class="block gris-color">{{candidat.position}} </span>
-                        <span class="block gris-color">{{candidat.company}} </span>
+                        <span class="block gris-color">{{candidat.company|safe}} </span>
                     </li>
                 </ul>
 
