@@ -300,6 +300,10 @@ img.border {
     font-size: 22px;
 }
 
+.profil-widget .infos-profil a {
+    text-decoration: underline;
+}
+
 .jury-item {
     width: 380px;
 }
