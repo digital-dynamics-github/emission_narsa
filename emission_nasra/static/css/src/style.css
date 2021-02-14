@@ -241,6 +241,9 @@ h2 {
 .candidat-item.short .profil-widget {
     margin-top: 15px;
 }
+.resume-content  a {
+    font-weight: bold;
+}
 
 
 body.arabic .resume-content {
