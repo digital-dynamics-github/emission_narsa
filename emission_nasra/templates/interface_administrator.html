@@ -35,7 +35,116 @@
     
     <div id="" class="relative hidden container-tabs-administrator">
         <div class="slider-tabs-administrator relative">
-            <div class="tab-administrator left">
+            {% if user_admin == "narsa_user" %}
+                <div class="tab-administrator left">
+                    <div class="box0-15">
+                        <div class="table-widget relative">
+                            <h1 class="bottom30 top30">Candidats   
+                                {% if not user_admin == "narsa_user"  %}
+                                <input type="button" value="Ajouter Un Candidat" class="btn bleu right add-widget" data-type="candidat" />
+                                {% endif %}
+
+                                <span class="block clr"></span>
+                            </h1>
+                            <table width="100%" cellSpacing="0" cellPadding="0" border="0">
+                                <thead class="header-table">
+                                    <tr>
+                                        <th class="column-table">Nom du Candidat</th>
+                                        <th class="column-table">Adresse email</th>
+                                        <th class="column-table">Nom du Projet</th>
+                                        <th class="column-table">nombre des votes</th>
+                                        <th class="column-table">Actions</th>
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+                                    {% for candidat in candidats %}
+                                        <tr class="row-table">
+                                            <td class="column-table">{{candidat.first_name}} {{candidat.last_name}}</td>
+                                            <td class="column-table">{{candidat.email}}</td>
+                                            <td class="column-table">{{candidat.project.title}}</td>
+                                            <td class="column-table">
+                                                {{candidat.total_votes}}
+                                            </td>
+                                            <td>
+                                                {% if not user_admin == "narsa_user"  %}
+                                                <input type="button" value="Modifer" class="btn bleu update-widget" data-uid="{{candidat.uid}}" data-type="candidat" />
+                                                <input type="button" value="Supprimer" class="btn bleu delete-widget"data-uid="{{candidat.uid}}" data-type="candidat" />
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+
+                                    {% endfor %}
+
+                                </tbody>
+
+                            </table>
+
+                        </div><!-- table-widget -->
+                    </div>
+
+                </div><!-- Slide tabs -->
+                
+                <div class="tab-administrator left">
+                    <div class="box0-15">
+                        {% if config_vote == None %}
+                            <h1>Créer d'abord la configuration du vote pour manipuler l'état du vote sur le site web !</h1>
+                        {% else %}
+                            <h1 class="top30 bottom30">Votes</h1>
+
+                        <div id="" class="pointer animate widget-switch {% if config_vote.active == True %}active{% endif %}" data-type="active_vote" data-uid="{{config_vote.uid}}"><!---  -->
+                                <div class="absolute label-switcher">
+                                    {% if config_vote.active == True %}
+                                        Active
+                                    {% else %}
+                                        Non Active
+                                    {% endif %}
+
+                                </div>
+
+                                <div class="handler-switcher relative animate"></div>
+                            <div class="clr"></div>
+                        </div>
+                        {% endif %}
+
+
+
+                         {% if config_demo == None %}
+                            <h1>Créer d'abord la configuration du Démo pour manipuler l'état des votes sur le site! </h1>
+                        {% else %}
+                            <h1 class="top30 bottom30">Démo</h1>
+
+                        <div id="" class="pointer animate widget-switch {% if config_demo.active == True %}active{% endif %}" data-type="active_demo" data-uid="{{config_demo.uid}}">
+                                <div class="absolute label-switcher">
+                                    {% if config_demo.active == True %}
+                                        Active
+                                    {% else %}
+                                        Non Active
+                                    {% endif %}
+
+                                </div>
+                                <div class="handler-switcher relative animate"></div>
+                            <div class="clr"></div>
+                        </div>
+                        {% endif %}
+
+
+
+
+                        <h1 class="top30 bottom30">Exporter les candidats</h1>
+
+                        <a href="/exporter-candidat/" class="btn bleu" target="_blank">Exporter les utilisateurs en .xlsx</a>
+                    </div>
+
+
+
+
+                </div><!-- Slide tabs -->
+            
+            
+            {% else %}
+                <div class="tab-administrator left">
                 <div class="box0-15">
                     <div class="table-widget relative">
                         <h1 class="bottom30 top30">Streams   
@@ -306,6 +415,10 @@
 
                 
             </div><!-- Slide tabs -->
+            
+            
+            {% endif %}
+            
             
             
             <div class="clr"></div>
