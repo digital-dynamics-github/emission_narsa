@@ -72,7 +72,7 @@ class InterfaceAdministrator(TemplateView):
         if request.user.is_anonymous == True:
             return redirect("/login-administrator/")
         
-        user_admin = request.user.email
+        user_admin = request.user
 
         streams = Stream.objects.all().order_by("-id")
 
