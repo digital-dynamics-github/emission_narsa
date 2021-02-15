@@ -22,6 +22,7 @@ class LoginAdministrator(TemplateView):
     http_method_names = ['get', "post" ]
     template_name = 'login_administrator.html'
     next_page = ""
+    
     def get(self, request):
         form = LoginForm
         if request.user.is_authenticated:
