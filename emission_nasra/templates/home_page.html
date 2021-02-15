@@ -23,6 +23,18 @@
     
     </div><!-- block stream -->
     
+    <div>
+        {% if block_bottom_slide %}
+            {% if block_bottom_slide.description and not block_bottom_slide.description == "" and not block_bottom_slide.description == " " %}
+                {% if LANGUAGE_CODE == "ar" %}
+                    {{block_bottom_slide.description_ar|safe}}
+                {% else %}
+                    {{block_bottom_slide.description|safe}}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    </div>
+    
     <div id="block-text-home" class="relative center-auto ">
         <h1 class="bold bleu-color bottom40 relative align-center">
             

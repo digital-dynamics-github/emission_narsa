@@ -201,11 +201,11 @@
             
             <div class="tab-administrator left">
                 <div class="box0-15">
-                    <h1>Block Text</h1>
+                    <h1>Présentation Home</h1>
                     
                     {% if block_text %}
                     <h2 class="bottom20">{{block_text.title}}</h2>
-                    <div>{{block_text.content|truncatewords:50}}</div>
+                    <div>{{block_text.description|truncatewords:50}}</div>
                     <div class="top30">
                         {% if not user_admin == "narsa_user"  %}
                         <input type="button" value="Modifier le Présentation" class="btn bleu update-widget"  data-uid="{{block_text.uid}}" data-type="block_text"  />
@@ -215,6 +215,18 @@
                 {% else %}
                     <input type="button" value="Créer le contenu du Présentation" class="btn bleu add-widget" data-uid="" data-type="block_text" />
                 {% endif %}
+                    
+                    
+                    
+                <h1>Compte à rebours Home</h1>
+                    
+                {% if block_bottom_slide %}
+                <h2 class="bottom20">{{block_bottom_slide.title}}</h2>
+                <div class="top30">
+                    {% if not user_admin == "narsa_user"  %}
+                    <input type="button" value="Modifier le Compte à rebours" class="btn bleu update-widget"  data-uid="{{block_bottom_slide.uid}}" data-type="block_text"  />
+                    {% endif %}
+                </div>
                     
                 
                 </div>

@@ -105,11 +105,16 @@ class InterfaceAdministrator(TemplateView):
         block_script_object = BlockText.objects.all().filter(location="script")
         if block_script_object.count() > 0:
             block_script = block_script_object[0]
+            
+        block_bottom_slide = None
+        block_bottom_slide_object = BlockText.objects.all().filter(location="bottom_slide")
+        if block_bottom_slide_object.count() > 0:
+            block_bottom_slide = block_bottom_slide_object[0]
 
 
 
 
-        return render(request, self.template_name, { "streams" : streams, "candidats" : candidats, "config_vote" : config, "reglement" : reglement, "jurys" : jurys, "block_text" : block_text, "block_script" : block_script, "config_demo" : config_demo, "user_admin" : user_admin})
+        return render(request, self.template_name, { "streams" : streams, "candidats" : candidats, "config_vote" : config, "reglement" : reglement, "jurys" : jurys, "block_text" : block_text, "block_script" : block_script, "config_demo" : config_demo, "user_admin" : user_admin, "block_bottom_slide" : block_bottom_slide})
 
 class HomePage(TemplateView):
     http_method_names = ['get', ]
