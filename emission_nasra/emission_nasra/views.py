@@ -109,7 +109,7 @@ class InterfaceAdministrator(TemplateView):
 
 
 
-        return render(request, self.template_name, { "streams" : streams, "candidats" : candidats, "config_vote" : config, "reglement" : reglement, "jurys" : jurys, "block_text" : block_text, "block_script" : block_script, "config_demo" : config_demo})
+        return render(request, self.template_name, { "streams" : streams, "candidats" : candidats, "config_vote" : config, "reglement" : reglement, "jurys" : jurys, "block_text" : block_text, "block_script" : block_script, "config_demo" : config_demo, "user_admin" : user_admin})
 
 class HomePage(TemplateView):
     http_method_names = ['get', ]
@@ -165,7 +165,7 @@ class HomePage(TemplateView):
             script_site = block_script[0]
 
         return render(request, self.template_name, {  "candidats" : candidats, "jurys" : jurys, "text_home" : text_home, "script_site" : script_site, "stream_object" : stream_object,
-                                                      "display_jauge_candidat" : display_jauge_candidat, "accept_vote" : accept_vote, "user_admin" : user_admin
+                                                      "display_jauge_candidat" : display_jauge_candidat, "accept_vote" : accept_vote
 
                                                       })
 
