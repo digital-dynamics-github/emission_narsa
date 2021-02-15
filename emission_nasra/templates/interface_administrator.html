@@ -15,13 +15,18 @@
     <div id="tabs-administrator" class="border-bottom shadow top30">
         <div class="tabs-side relative container center-auto tabs" id="tabs-container-administrator"  data-name="administrator">
             <ul class="horizontal parent-ul">
+                {% if user_admin == "narsa_user" %}
+                    <li class="bleu-color bold hover-fade pointer tab">Candidats </li>
+                    <li class="bleu-color bold hover-fade pointer tab">Settings </li>
+                {% else %}
                 <li class="bleu-color bold hover-fade pointer tab active">Streams </li>
                 <li class="bleu-color bold hover-fade pointer tab">Présentation Home </li>
                 <li class="bleu-color bold hover-fade pointer tab">Candidats </li>
                 <li class="bleu-color bold hover-fade pointer tab">Jury </li>
-                <li class="bleu-color bold hover-fade pointer tab">réglements </li>
+                <li class="bleu-color bold hover-fade pointer tab">réglements </li>     
                 <li class="bleu-color bold hover-fade pointer tab">scripts </li>
                 <li class="bleu-color bold hover-fade pointer tab">Settings </li>
+                {% endif %}
 
             </ul>
             <div class="clr"></div>
@@ -36,8 +41,9 @@
                 <div class="box0-15">
                     <div class="table-widget relative">
                         <h1 class="bottom30 top30">Streams   
-
-                            <input type="button" value="Ajouter Un Stream" class="btn bleu right add-widget" data-type="stream" />
+                            {% if not user_admin == "narsa_user"  %}
+                                <input type="button" value="Ajouter Un Stream" class="btn bleu right add-widget" data-type="stream" />
+                            {% endif %}
 
                             <span class="block clr"></span>
                         </h1>
@@ -66,8 +72,10 @@
                                             </div>
                                         </td>
                                         <td>
+                                            {% if not user_admin == "narsa_user"  %}
                                             <input type="button" value="Modifer" class="btn bleu update-widget" data-uid="{{stream.uid}}" data-type="stream" />
                                             <input type="button" value="Supprimer" class="btn bleu delete-widget"data-uid="{{stream.uid}}" data-type="stream" />
+                                            {% endif %}
                                         </td>
                                     </tr>
 
@@ -92,7 +100,9 @@
                     <h2 class="bottom20">{{block_text.title}}</h2>
                     <div>{{block_text.content|truncatewords:50}}</div>
                     <div class="top30">
+                        {% if not user_admin == "narsa_user"  %}
                         <input type="button" value="Modifier le Présentation" class="btn bleu update-widget"  data-uid="{{block_text.uid}}" data-type="block_text"  />
+                        {% endif %}
                     </div>
                     
                 {% else %}
@@ -109,8 +119,9 @@
                 <div class="box0-15">
                     <div class="table-widget relative">
                         <h1 class="bottom30 top30">Candidats   
-
+                            {% if not user_admin == "narsa_user"  %}
                             <input type="button" value="Ajouter Un Candidat" class="btn bleu right add-widget" data-type="candidat" />
+                            {% endif %}
 
                             <span class="block clr"></span>
                         </h1>
@@ -136,8 +147,10 @@
                                             {{candidat.total_votes}}
                                         </td>
                                         <td>
+                                            {% if not user_admin == "narsa_user"  %}
                                             <input type="button" value="Modifer" class="btn bleu update-widget" data-uid="{{candidat.uid}}" data-type="candidat" />
                                             <input type="button" value="Supprimer" class="btn bleu delete-widget"data-uid="{{candidat.uid}}" data-type="candidat" />
+                                            {% endif %}
                                         </td>
                                     </tr>
 
@@ -156,8 +169,9 @@
                 <div class="box0-15">
                     <div class="table-widget relative">
                         <h1 class="bottom30 top30">Jury   
-
+                            {% if not user_admin == "narsa_user"  %}
                             <input type="button" value="Ajouter Un Jury" class="btn bleu right add-widget" data-type="jury" />
+                            {% endif %}
 
                             <span class="block clr"></span>
                         </h1>
@@ -179,8 +193,10 @@
                                         <td class="column-table">{{jury.position}}</td>
                                         <td class="column-table">{{jury.company}}</td>
                                         <td>
+                                            {% if not user_admin == "narsa_user"  %}
                                             <input type="button" value="Modifer" class="btn bleu update-widget" data-uid="{{jury.uid}}" data-type="jury" />
                                             <input type="button" value="Supprimer" class="btn bleu delete-widget"data-uid="{{jury.uid}}" data-type="jury" />
+                                            {% endif %}
                                         </td>
                                     </tr>
 
@@ -203,7 +219,9 @@
                     <h2 class="bottom20">{{reglement.title}}</h2>
                     <div>{{reglement.content|truncatewords:50}}</div>
                     <div class="top30">
+                        {% if not user_admin == "narsa_user"  %}
                         <input type="button" value="Modifier le réglement" class="btn bleu" id="update-reglement" data-id="{{reglement.id}}" />
+                        {% endif %}
                     </div>
                     
                 {% else %}
@@ -220,7 +238,9 @@
                     <h2 class="bottom20">{{block_script.title}}</h2>
                     <div>{{block_script.content|truncatewords:50}}</div>
                     <div class="top30">
+                        {% if not user_admin == "narsa_user"  %}
                         <input type="button" value="Modifier le Script" class="btn bleu update-widget"  data-uid="{{block_script.uid}}" data-type="block_script"  />
+                        {% endif %}
                     </div>
                     
                 {% else %}
