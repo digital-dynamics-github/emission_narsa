@@ -71,6 +71,8 @@ class InterfaceAdministrator(TemplateView):
 
         if request.user.is_anonymous == True:
             return redirect("/login-administrator/")
+        
+        user_admin = request.user.email
 
         streams = Stream.objects.all().order_by("-id")
 
@@ -163,7 +165,7 @@ class HomePage(TemplateView):
             script_site = block_script[0]
 
         return render(request, self.template_name, {  "candidats" : candidats, "jurys" : jurys, "text_home" : text_home, "script_site" : script_site, "stream_object" : stream_object,
-                                                      "display_jauge_candidat" : display_jauge_candidat, "accept_vote" : accept_vote
+                                                      "display_jauge_candidat" : display_jauge_candidat, "accept_vote" : accept_vote, "user_admin" : user_admin
 
                                                       })
 
