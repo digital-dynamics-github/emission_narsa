@@ -75,11 +75,11 @@
 {% endblock %}
     
     
-    <script>
-        var lang = "{{LANGUAGE_CODE}}";
-    </script>
-    
-    {% block js %}
+    {% block image_tombola  %}
+        <div class="align-center top30">
+            <img src="/static/images/visuel-vote-tombola-{{LANGUAGE_CODE}}-mobile.png" class="full-width mobile" alt="TOMBOLA NARSA" />
+            <img src="/static/images/visuel-vote-tombola-{{LANGUAGE_CODE}}.png" class="full-width desktop" alt="TOMBOLA NARSA" />
+        </div>
     
     {% endblock %}
     
@@ -91,5 +91,14 @@
         {% endif %}
             
     </footer>
+    
+    
+    <script>
+        var lang = "{{LANGUAGE_CODE}}";
+    </script>
+    
+    {% block js %}
+    
+    {% endblock %}
 </body>
 </html>
