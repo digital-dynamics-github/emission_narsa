@@ -293,7 +293,7 @@ class TestLive(TemplateView):
         stream = Stream.objects.all().filter(uid="751cc2fd")
         if stream.count() == 1 :
             stream = stream[0]
-            return render(request, self.template_name, { "script_site" : script_site })
+            return render(request, self.template_name, { "script_site" : script_site, "stream" : stream })
         else:
             return HttpResponseRedirect('/')
 
