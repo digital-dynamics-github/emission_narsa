@@ -116,7 +116,7 @@ class UpdateStream(TemplateAPIViewCustom):
                     str_act.active = False
                     str_act.save()
 
-            stream.active = True
+            #stream.active = True
             stream.save()
 
 
