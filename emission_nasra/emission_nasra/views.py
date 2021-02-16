@@ -284,6 +284,11 @@ class TestLive(TemplateView):
 
     def get(self, request):
         request.get_path_page = request.get_full_path().replace("/ar/", "").replace("/fr/", "")
+        
+        block_script = BlockText.objects.all().filter(location="script").order_by("-id")
+        script_site = None
+        if block_script.count() > 0:
+            script_site = block_script[0]
 
         stream = Stream.objects.all().filter(uid="751cc2fd")
         if stream.count() == 1 :
