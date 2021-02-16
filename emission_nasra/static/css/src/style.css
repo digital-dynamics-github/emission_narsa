@@ -105,7 +105,7 @@ h1 {
 .mobile {
     display: none;
 }
-img.mobile {
+img.desktop {
     display: inline-block;
 }
 
