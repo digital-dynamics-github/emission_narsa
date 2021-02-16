@@ -285,7 +285,7 @@ class TestLive(TemplateView):
     def get(self, request):
         request.get_path_page = request.get_full_path().replace("/ar/", "").replace("/fr/", "")
 
-        stream = Stream.objects.all().fiter(uid="751cc2fd")
+        stream = Stream.objects.all().filter(uid="751cc2fd")
         if stream.count() == 1 :
             stream = stream[0]
             return render(request, self.template_name, { "script_site" : script_site })
