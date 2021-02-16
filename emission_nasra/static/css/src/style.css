@@ -105,6 +105,10 @@ h1 {
 .mobile {
     display: none;
 }
+img.mobile {
+    display: inline-block;
+}
+
 .bleu-gris {
     background: #eef1f8;
 }
