@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static i18n thumbnail  %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{% block body %}
+
+
+
+
+
+<div class="container center-auto">
+    <div id="block-stream" class="relative">
+        {% if stream %}
+           
+            {{stream.code|safe}}
+        {% endif %}
+    
+    </div><!-- block stream -->
+</div>
+    
+ 
+{% endblock %}
+
+
+{% block js %}
+<script src="{% static 'js/scripts/dist/home_page.js'  %}"></script>
+    
+{% endblock %}

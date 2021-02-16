@@ -275,6 +275,22 @@ class MerciPage(TemplateView):
             script_site = block_script[0]
 
         return render(request, self.template_name, { "script_site" : script_site })
+    
+class TestLive(TemplateView):
+    http_method_names = ['get', 'post']
+    template_name = 'test_live.html'
+
+
+
+    def get(self, request):
+        request.get_path_page = request.get_full_path().replace("/ar/", "").replace("/fr/", "")
+
+        stream = Stream.objects.all().fiter(uid="751cc2fd")
+        if stream.count() == 1 :
+            stream = stream[0]
+            return render(request, self.template_name, { "script_site" : script_site })
+        else:
+            return HttpResponseRedirect('/')
 
 class JuryPage(TemplateView):
     http_method_names = ['get', ]
