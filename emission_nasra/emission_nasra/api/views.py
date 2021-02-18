@@ -666,8 +666,14 @@ class SavePerson(TemplateAPIViewCustom):
             candidat.total_votes = candidat.total_votes + 1
             candidat.save()
         else:
-            status = "error"
-            message = "Candidat n'existe plus, Merci de réessayer plus tard"
+            if config_vote.count() == 0 :
+                status = "error"
+                message_fr = "Le vote est fermé, Merci pour votre visite."
+                message_ar = "لقد تم إغلاق التصويت، شكرا لزيارتكم."
+            else:
+                status = "error"
+                message_fr = "Candidat n'existe plus, Merci de réessayer plus tard"
+                message_ar = "لم يعد المرشح موجودًا ، يرجى المحاولة مرة أخرى لاحقًا"
 
 
         return Response({ "status" : status, "message_fr" : message_fr, "message_ar" : message_ar, "uid_ref" : uid_ref, "site_demo" : site_demo}, content_type="application/json", status=200)
