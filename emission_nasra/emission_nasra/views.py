@@ -11,6 +11,8 @@ from vote.models import Vote, Reglement
 from django.http import HttpResponse
 from jury.models import Jury
 import xlwt
+import xlsxwriter
+import io
 
 from .forms import LoginForm, ContactForm
 from django.contrib.auth import authenticate, login, logout
@@ -121,7 +123,10 @@ class HomePage(TemplateView):
     template_name = 'home_page.html'
 
     def get(self, request):
+	
+	    
         request.get_path_page = request.get_full_path().replace("/ar/", "").replace("/fr/", "")
+		
 
         config_vote = Config.objects.all().filter(type="vote", active=True)
         accept_vote = False
@@ -324,9 +329,50 @@ class ExportCandidat(TemplateView):
 
     def get(self, request):
 
-        response = HttpResponse(content_type='application/ms-excel')
-        response['Content-Disposition'] = 'attachment; filename="export_users.xls"'
+        #output = io.BytesIO()
 
+        #response = HttpResponse(content_type='application/ms-excel')
+        #response['Content-Disposition'] = 'attachment; filename="export_users.xlsx"'
+
+        response = HttpResponse( content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        response['Content-Disposition'] = "attachment; filename=export_users.xlsx"
+
+        workbook = xlsxwriter.Workbook(response, {'in_memory': True})
+        worksheet = workbook.add_worksheet("Utilisateurs")
+        bold = workbook.add_format({'bold': True})
+
+        worksheet.write('A1', 'ID', bold)
+        worksheet.write('B1', 'Nom complet', bold)
+        worksheet.write('C1', 'Adresse email', bold)
+        worksheet.write('D1', 'Numéro de téléphone', bold)
+
+        data_file = []
+        row_num = 0
+        rows = Person.objects.all().values_list('id', 'name', 'email', 'phone')
+        for row in rows:
+            row_num += 1
+            row_list = []
+            for col_num in range(len(row)):
+                row_list.append(row[col_num])
+            data_file.append(row_list)
+
+        data_file = tuple(data_file)
+
+        row = 1
+        col = 0
+        for id, name, mail, phone in (data_file):
+            worksheet.write(row, col, id)
+            worksheet.write_string(row, col + 1, str(name))
+            worksheet.write_string(row, col + 2, str(mail))
+            worksheet.write_string(row, col + 3, str(phone))
+            row += 1
+
+
+        workbook.close()
+
+        return response
+
+        '''
         wb = xlwt.Workbook(encoding='utf-8')
         ws = wb.add_sheet('Users')
 
@@ -352,6 +398,7 @@ class ExportCandidat(TemplateView):
 
         wb.save(response)
         return response
+        '''
 
         #return render(request, self.template_name, {  {}})
 
